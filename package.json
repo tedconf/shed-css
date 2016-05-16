@@ -20,7 +20,7 @@
     "build:css:dist": "run-s 'compile:css -- -d ./dist' compress:css",
     "build:css:lib": "npm run compile:css:loops -- -d ./lib/",
     "serve": "browser-sync start --server --files \"dist/*.css\" --index \"./styleguide/index.html\" --port \"1337\" --no-open",
-    "prepublish": "run-s compile:css compress:css",
+    "prepublish": "run-p build:css:lib build:css:dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "push_pages": "npm run build:docs && git add . && git commit -m 'update docs' && git subtree push --prefix demo/dist/ origin gh-pages"
   },
