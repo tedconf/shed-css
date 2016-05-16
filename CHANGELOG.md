@@ -15,3 +15,6 @@
 
 # 0.2.4 - 05/16/2016
 - Fix positional name collision
+
+# 0.2.4 - 05/16/2016
+- Fix typos in font-weight, letter spacing

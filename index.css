@@ -39,7 +39,6 @@
 	--l-s--tight: -0.8em;
 	--l-s--normal: .16em;
 	--l-s--loose: .32em;
-	--l-s: (d, t, n, l), (var(--l-h--default), var(--l-h--tight), var(--l-h--normal), var(--l-h--loose));
 	--dirs: all, top, bottom, left, right, x, y;
 	--dirs-short: a, t, b, l, r, x, y;
 	--pos-options: (absolute, relative, static, fixed, cover), (a, r, s, f, c);
