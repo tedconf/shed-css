@@ -1,6 +1,6 @@
 {
   "name": "shed-css",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Functional and customizable CSS utilities with familiar names",
   "main": "lib/index.css",
   "style": "lib/index.css",
@@ -20,6 +20,7 @@
     "build:css:lib": "npm run compile:css:loops -- -d ./lib/",
     "serve": "browser-sync start --server --files \"dist/*.css\" --index \"./styleguide/index.html\" --port \"1337\" --no-open",
     "build": "run-p build:css:lib build:css:dist",
+    "prepublish": "run-s build",
     "test": "echo \"Error: no test specified\" && exit 0",
     "push_pages": "npm run build:docs && git add . && git commit -m 'update docs' && git subtree push --prefix demo/dist/ origin gh-pages"
   },
@@ -41,15 +42,15 @@
     "mdcss-theme-github": "2.2.0",
     "npm-run-all": "2.1.0",
     "npmpub": "3.1.0",
-    "postcss-cli": "2.5.2"
-  },
-  "peerDependencies": {
-    "postcss": "5.0.21",
+    "postcss-cli": "2.5.2",
     "postcss-at-rules-variables": "0.0.21",
     "postcss-conditionals": "2.0.2",
-    "postcss-cssnext": "2.5.2",
     "postcss-each": "0.9.1",
     "postcss-for": "2.0.2",
     "postcss-import": "8.1.2"
+  },
+  "peerDependencies": {
+    "postcss": "5.0.21",
+    "postcss-cssnext": "2.5.2"
   }
 }
