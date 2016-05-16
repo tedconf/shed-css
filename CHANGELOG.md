@@ -21,3 +21,6 @@
 
 # 0.2.6 - 05/16/2016
 - use vars for letter-spacing
+
+# 0.2.7 - 05/16/2016
+- use `-` in display helpers
