@@ -3,10 +3,7 @@
 Shed is a collection of functional CSS utilities aiming to save you the trouble of writing CSS.
 
 ## Setup
-1. install the _shed-css_ package
-	```sh
-	npm install --save-dev shed-css
-	```
+1. install the _shed-css_ package `npm install --save-dev shed-css`
 2. if you just want to work:
 	`@import "shed-css/dist/index.css";` from your stylesheet.
 	If you want to customize things, add postcss and use [css-next](https://github.com/MoOx/postcss-cssnext) to your build and `@import "shed-css/lib/index.css"`.
