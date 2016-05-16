@@ -35,8 +35,8 @@
 	--l-h--normal: var(--z1);
 	--l-h--loose: var(--z4);
 	--l-h: (d, t, n, l), (var(--l-h--default), var(--l-h--tight), var(--l-h--normal), var(--l-h--loose));
-	--l-s--default: initial;
-	--l-s--tight: -0.8em;
+	--l-s--default: normal;
+	--l-s--tight: -.08em;
 	--l-s--normal: .16em;
 	--l-s--loose: .32em;
 	--dirs: all, top, bottom, left, right, x, y;
