@@ -1,0 +1,101 @@
+:root {
+	--o-types: (hidden, visible, scroll, auto), (h, v, s, a);
+}
+
+@each $mq in var(--mqs) {
+	@each $prop, $short in var(--o-types) {
+		@if $(mq) == n {
+			/*---
+				title: $(prop)
+				section: Overflow
+				---
+
+				```html
+				<div class=".o:$(short)">o:$(short)</span>
+				```
+			*/
+			.o\:$(short) {
+				overflow: $(prop);
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				/*---
+					title: $(prop)
+					section: Overflow
+					---
+
+					```html
+					<div class=".o:$(short)@$(mq)">o:$(short)@$(mq)</span>
+					```
+				*/
+				.o\:$(short)\@$(mq) {
+					overflow: $(prop);
+				}
+			}
+		}
+	}
+
+	@each $prop, $short in var(--o-types) {
+		@if $(mq) == n {
+			/*---
+				title: $(prop)
+				section: Overflow X
+				---
+
+				```html
+				<div class=".o-x:$(short)">o-x:$(short)</span>
+				```
+			*/
+			.o-x\:$(short) {
+				overflow-x: $(prop);
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				/*---
+					title: $(prop)
+					section: Overflow X
+					---
+
+					```html
+					<div class=".o-x:$(short)@$(mq)">o-x:$(short)@$(mq)</span>
+					```
+				*/
+				.o-x\:$(short)\@$(mq) {
+					overflow-x: $(prop);
+				}
+			}
+		}
+	}
+
+	@each $prop, $short in var(--o-types) {
+		@if $(mq) == n {
+			/*---
+				title: $(prop)
+				section:  Overflow Y
+				---
+
+				```html
+				<div class=".o-y:$(short)">o-y:$(short)</span>
+				```
+			*/
+			.o-y\:$(short) {
+				overflow-y: $(prop);
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				/*---
+					title: $(prop)
+					section:  Overflow Y
+					---
+
+					```html
+					<div class=".o-y:$(short)@$(mq)">o-y:$(short)@$(mq)</span>
+					```
+				*/
+				.o-y\:$(short)\@$(mq) {
+					overflow-y: $(prop);
+				}
+			}
+		}
+	}
+}

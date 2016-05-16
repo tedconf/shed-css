@@ -1,0 +1,38 @@
+:root {
+	--display-props: block, inline-block, inline, flex, table, table-cell;
+	--display-shorthands: b, i-b, i, f, t, t-c;
+}
+@each $mq in var(--mqs) {
+	@each $prop, $short in (var(--display-props)), (var(--display-shorthands)) {
+		@if $(mq) == n {
+			/*---
+				title: $(prop)
+				section: Display
+				---
+
+				```html
+				<div class=".d:$(short)">d:$(short)</span>
+				```
+			*/
+			.d\:$(short) {
+				display: $(prop);
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				/*---
+					title: $(prop)
+					section: Display
+					---
+
+					```html
+					<div class=".d:$(short)@$(mq)">d:$(short)</span>
+					```
+				*/
+				.d\:$(short)\@$(mq) {
+					display: $(prop);
+				}
+			}
+		}
+	}
+}
+

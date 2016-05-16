@@ -1,0 +1,35 @@
+@each $mq in var(--mqs) {
+	@if $(mq) == n {
+		@each $ms, $z in (var(--ms)), (var(--z)) {
+			/*---
+				title: $(z)
+				section: Max Width
+				---
+
+				```html
+				<span class="m-w:$(z)">m-w:$(z)</span>
+				```
+			*/
+			.m-w\:$(z) {
+				max-width: var(--ms$(ms));
+			}
+		}
+	} @else {
+		@media (--mq-$(mq)) {
+			@each $ms, $z in (var(--ms)), (var(--z)) {
+				/*---
+					title: $(z)
+					section: Max Width
+					---
+
+					```html
+					<span class="m-w:$(z)@$(mq)">m-w:$(z)@$(mq)</span>
+					```
+				*/
+				.m-w\:$(z)\@$(mq) {
+					max-width: var(--z$(ms));
+				}
+			}
+		}
+	}
+}

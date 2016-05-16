@@ -1,0 +1,152 @@
+@each $mq in var(--mqs) {
+	@each $prop, $short in (margin, padding), (m, p) {
+		@each $dir, $dir-short in (var(--dirs)), (var(--dirs-short)) {
+			@if $(mq) == n {
+				@if $(prop) == margin {
+					@if $(dir) == x {
+						.$(short)-$(dir-short)\:a {
+							$(prop)-left: auto;
+							$(prop)-right: auto;
+						}
+					} @else if $(dir) == y {
+						.$(short)-$(dir-short)\:a {
+							$(prop)-top: auto;
+							$(prop)-bottom: auto;
+						}
+					} @else {
+						.$(short)-$(dir-short)\:a {
+							$(prop)-$(dir): auto;
+						}
+					}
+				}
+				@each $ms, $z in (var(--ms)), (var(--z)) {
+					@if $(dir) == all {
+						/*---
+							title: $(prop)
+							section: Spacing
+							---
+
+							```html
+							<div class=".$(short):$(z)">$(short):$(z)</span>
+							```
+						*/
+						.$(short)\:$(z) {
+							$(prop): var(--z$(ms));
+						}
+						@if $(prop) == margin {
+							.$(short)\:-$(z) {
+								$(prop): -var(--z$(ms));
+							}
+						}
+					} @else {
+						/*---
+							title: $(prop)
+							section: Spacing
+							---
+
+							```html
+							<div class=".$(short)-$(dir):$(z)">$(short)-$(dir):$(z)</span>
+							```
+						*/
+						@if $(dir) == x {
+							.$(short)-$(dir-short)\:$(z) {
+								$(prop)-left: var(--z$(ms));
+								$(prop)-right: var(--z$(ms));
+							}
+						} @else if $(dir) == y {
+							.$(short)-$(dir-short)\:$(z) {
+								$(prop)-top: var(--z$(ms));
+								$(prop)-bottom: var(--z$(ms));
+							}
+						} @else {
+							.$(short)-$(dir-short)\:$(z) {
+								$(prop)-$(dir): var(--z$(ms));
+							}
+							@if $(prop) == margin {
+								.$(short)-$(dir-short)\:-$(z) {
+									$(prop)-$(dir): -var(--z$(ms));
+								}
+							}
+						}
+					}
+				}
+			} @else {
+				@media(--mq-$(mq)) {
+					@if $(prop) == margin {
+						@if $(dir) == all {
+							.$(short)-$(dir)\:a\@$(mq) {
+								$(prop): auto;
+							} @else if $(dir) == x {
+								.$(short)-$(dir-short)\:a\@$(mq) {
+									$(prop)-left: auto;
+									$(prop)-right: auto;
+								}
+							} @else if $(dir) == y {
+								.$(short)-$(dir-short)\:a\@$(mq) {
+									$(prop)-top: auto;
+									$(prop)-bottom: auto;
+								}
+							} @else {
+								.$(short)-$(dir)\:a\@$(mq) {
+									$(prop)-$(dir-short): auto;
+								}
+							}
+						}
+					}
+
+					@each $ms, $z in (var(--ms)), (var(--z)) {
+						@if $(dir) == all {
+							/*---
+								title: $(prop)
+								section: Spacing
+								---
+
+								```html
+								<div class=".$(short):$(z)@$(mq)">$(short):$(z)@$(mq)</span>
+								```
+							*/
+							.$(short)\:$(z)\@$(mq) {
+								$(prop): var(--z$(ms));
+							}
+							@if $(prop) == margin {
+								.$(short)\:-$(z)\@$(mq) {
+									$(prop): -var(--z$(ms));
+								}
+							}
+						} @else {
+							/*---
+								title: $(prop)
+								section: Spacing
+								---
+
+								```html
+								<div class=".$(short)-$(dir):$(z)@$(mq)">$(short)-$(dir):$(z)@$(mq)</span>
+								```
+							*/
+							@if $(dir) == x {
+								.$(short)-$(dir-short)\:$(z)\@$(mq) {
+									$(prop)-left: var(--z$(ms));
+									$(prop)-right: var(--z$(ms));
+								}
+							} @else if $(dir) == y {
+								.$(short)-$(dir-short)\:$(z)\@$(mq) {
+									$(prop)-top: var(--z$(ms));
+									$(prop)-bottom: var(--z$(ms));
+								}
+							} @else {
+								.$(short)-$(dir-short)\:$(z)\@$(mq) {
+									$(prop)-$(dir): var(--z$(ms));
+								}
+								@if $(prop) == margin {
+									.$(short)-$(dir-short)\:-$(z)\@$(mq) {
+										$(prop)-$(dir): -var(--z$(ms));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+:root {
+	--f-f-sans: sans-serif;
+	--f-f-serif: serif;
+	--f-f-mono: monospace;
+	--f-f-styles: (sans, serif, mono), (f-f-sans, f-f-serif, f-f-mono);
+}
+
+@each $style, $var in var(--f-f-styles) {
+	/*---
+	title: Font Family
+	section: Typography
+	---
+
+	```html
+	<span class=".f-f:$(style)">f-f:$(style)</span>
+	```
+	 */
+	.f-f\:$(style) {
+		font-family: var(--$(var));
+	}
+}
+

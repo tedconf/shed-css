@@ -1,0 +1,14 @@
+@each $ms, $z in (var(--ms)), (var(--z)) {
+	/*---
+		title: all
+		section: Border Radius
+		---
+
+		```html
+		<div class="b-r:$(z)">b-r:$(z)</span>
+		```
+	*/
+	.b-r\:$(z) {
+		border-radius: var(--z$(ms));
+	}
+}

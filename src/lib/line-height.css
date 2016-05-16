@@ -1,0 +1,36 @@
+:root {
+	--l-h: (d, t, n, l), (1, var(--z2), var(--z1), var(--z4));
+}
+@each $mq in var(--mqs) {
+	@each $short, $val in var(--l-h) {
+		@if $(mq) == n {
+			/*---
+				title: $(short)
+				section: Line Height
+				---
+
+				```html
+				<div class=".l-h:$(short)">l-h:$(short)</span>
+				```
+			*/
+			.l-h\:$(short) {
+				line-height: $(val);
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				/*---
+					title: $(short)
+					section: Line Height
+					---
+
+					```html
+					<div class=".l-h:$(short)@$(mq)">l-h:$(short)@$(mq)</span>
+					```
+				*/
+				.l-h\:$(short)\@$(mq) {
+					line-height: $(val);
+				}
+			}
+		}
+	}
+}

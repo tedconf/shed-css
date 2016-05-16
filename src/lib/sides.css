@@ -1,0 +1,57 @@
+:root {
+	--sides-options: (top, bottom, left, right);
+}
+
+@each $mq in var(--mqs) {
+	@each $pos in var(--sides-options) {
+		@if $(mq) == n {
+			.$(pos) {
+				$(pos): 100%;
+			}
+
+			@each $ms, $z in (var(--ms)), (var(--z)) {
+				/*---
+					title: Position $(
+					section: Side
+					---
+
+					```html
+					<span class="$(pos):$(z)">$(pos):$(z)</span>
+					```
+				*/
+				.$(pos)\:$(z) {
+					$(pos): var(--z$(ms));
+				}
+
+				.$(pos)\:-$(z) {
+					$(pos): -var(--z$(ms));
+				}
+			}
+		} @else {
+			@media (--mq-$(mq)) {
+				.$(pos)\@$(mq) {
+					$(pos): 100%;
+				}
+
+				@each $ms, $z in (var(--ms)), (var(--z)) {
+					/*---
+						title: Position $(
+						section: Side
+						---
+
+						```html
+						<span class="$(pos):$(z)@$(mq)">$(pos):$(z)@$(mq)</span>
+						```
+					*/
+					.$(pos)\:$(z)\@$(mq) {
+						$(pos): var(--z$(ms));
+					}
+
+					.$(pos)\:-$(z)\@$(mq) {
+						$(pos): -var(--z$(ms));
+					}
+				}
+			}
+		}
+	}
+}
