@@ -37,3 +37,39 @@
 		}
 	}
 }
+
+@each $mq in var(--mqs) {
+	@if $(mq) == n {
+		@each $ms, $z in (var(--ms)), (var(--z)) {
+			/*---
+				title: $(z)
+				section: Height
+				---
+
+				```html
+				<span class="h:$(z)">h:$(z)</span>
+				```
+			*/
+			.h\:$(z) {
+				height: var(--ms$(ms));
+			}
+		}
+	} @else {
+		@media (--mq-$(mq)) {
+			@each $ms, $z in (var(--ms)), (var(--z)) {
+				/*---
+					title: $(z)
+					section: Height
+					---
+
+					```html
+					<span class="h:$(z)@$(mq)">h:$(z)@$(mq)</span>
+					```
+				*/
+				.h\:$(z)\@$(mq) {
+					height: var(--ms$(ms));
+				}
+			}
+		}
+	}
+}
