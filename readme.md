@@ -1,44 +1,68 @@
-# Funco :: type
+# Shed
 
-## Functional CSS Type Utility
+Shed is a collection of functional CSS utilities aiming to save you the trouble of writing CSS.
 
-### setup
+## Setup
+1. install the _shed-css_ package
+	```sh
+	npm install --save-dev shed-css
+	```
+2. if you just want to work:
+	`@import "shed-css/dist/index.css";` from your stylesheet.
+	If you want to customize things, add postcss and use [css-next](https://github.com/MoOx/postcss-cssnext) to your build and `@import "shed-css/lib/index.css"`.
 
-`@import "lib/{size|weight|letter-spacing|leading}/{short|long}"`
+3. You can customize the following:
 
 ```css
 :root {
-	--funco-type-size---5: .125rem;
-	--funco-type-size---4: .25rem;
-	--funco-type-size---3: .333rem;
-	--funco-type-size---2: .5rem;
-	--funco-type-size---2: .666rem;
-	--funco-type-size---1: .8rem;
-	--funco-type-size--0: 1rem;
-	--funco-type-size--1: 1.125rem;
-	--funco-type-size--2: 1.25rem;
-	--funco-type-size--3: 1.5rem;
-	--funco-type-size--4: 1.75rem;
-	--funco-type-size--5: 2rem;
-	--funco-type-size--6: 3rem;
-	--funco-type-size--7: 4rem;
-	--funco-type-size--8: 5rem;
-	--funco-type-size--9: 6rem;
-	--funco-type-size--10: 7rem;
-	--funco-type-letter-spacing--tight: 7rem;
-	--funco-type-letter-spacing--normal: 7rem;
-	--funco-type-letter-spacing--loose: 7rem;
-	--funco-type-leading--title: 1.25;
-	--funco-type-leading--copy: 1.55;
-	--funco-type-leading--normal: 1;
-	--funco-type-weight--light: light;
-	--funco-type-weight--normal: normal;
-	--funco-type-weight--bold: bold;
+	/* font families */
+	--f-f-sans: sans-serif;
+	--f-f-serif: serif;
+	--f-f-mono: monospace;
+	/* font weights, minimum and maximum
+	 *
+	 * We will generate all of the weights between
+	 * and including these.
+	 */
+	--f-w-min: 100;
+	--f-w-max: 900;
+	/* Line heights */
+	--l-h--default: 1;
+	--l-h--tight: var(--z2);
+	--l-h--normal: var(--z1);
+	--l-h--loose: var(--z4);
+	/* Letter spacing */
+	--l-s--default: initial;
+	--l-s--tight: -0.8em;
+	--l-s--normal: .16em;
+	--l-s--loose: .32em;
+	/* "z" is short for "size". This is where you set
+	 * up your [modular scale](http://www.modularscale.com/?1&em&1.2&web&text).
+	 * By default, it's set to minor-third (1.2).
+	 */
+	--z-6: var(--ms-6);
+	--z-5: var(--ms-5);
+	--z-4: var(--ms-4);
+	--z-3: var(--ms-3);
+	--z-2: var(--ms-2);
+	--z-1: var(--ms-1);
+	--z0: 0;
+	--z1: var(--ms0);
+	--z2: var(--ms1);
+	--z3: var(--ms2);
+	--z4: var(--ms3);
+	--z5: var(--ms4);
+	--z6: var(--ms5);
+	--z7: var(--ms6);
+	--z8: var(--ms7);
+	--z9: var(--ms8);
+	--z10: var(--ms9);
 }
 
+/* media queries, min-width recommmended */
 @custom-media --mq-xs (min-width: 20em);
 @custom-media --mq-sm (min-width: 30em);
 @custom-media --mq-md (min-width: 37em);
-@custom-media --mq-lg (min-width: 43em);
-@custom-media --mq-xl (min-width: 50em);
+@custom-media --mq-lg (min-width: 50em);
+@custom-media --mq-xl (min-width: 75em);
 ```
