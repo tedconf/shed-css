@@ -36,6 +36,7 @@
   "devDependencies": {
     "browser-sync": "2.12.8",
     "chokidar-cli": "1.2.0",
+    "css-modularscale": "1.0.0",
     "cssnano": "3.5.2",
     "mdcss": "1.5.1",
     "mdcss-theme-github": "2.2.0",

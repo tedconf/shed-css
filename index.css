@@ -1,3 +1,4 @@
+@import "css-modularscale";
 @import "src/lib/font-size.css";
 @import "src/lib/font-weight.css";
 @import "src/lib/font-family.css";
@@ -18,6 +19,7 @@
 @import "src/lib/radius.css";
 
 :root {
+	--ms-ratio: var(--minor-third);
 	--mqs: n, xs, sm ,md, lg, xl;
 	--ms: -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 	--z: \.4, \.5, \.6, \.7, \.8, \.9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
@@ -29,9 +31,9 @@
 	--f-w-min: 100;
 	--f-w-max: 900;
 	--l-h--default: 1;
-	--l-h--tight: var(--ms2);
-	--l-h--normal: var(--ms1);
-	--l-h--loose: var(--ms4);
+	--l-h--tight: var(--z2);
+	--l-h--normal: var(--z1);
+	--l-h--loose: var(--z4);
 	--l-h: (d, t, n, l), (var(--l-h--default), var(--l-h--tight), var(--l-h--normal), var(--l-h--loose));
 	--l-s--default: initial;
 	--l-s--tight: -0.8em;
@@ -40,23 +42,23 @@
 	--l-s: (d, t, n, l), (var(--l-h--default), var(--l-h--tight), var(--l-h--normal), var(--l-h--loose));
 	--dirs: all, top, bottom, x, y;
 	--dirs-short: a, t, b, x, y;
-	--z-6: .335rem;
-	--z-5: .402rem;
-	--z-4: .482rem;
-	--z-3: .579rem;
-	--z-2: .694rem;
-	--z-1: .833rem;
+	--z-6: var(--ms-6);
+	--z-5: var(--ms-5);
+	--z-4: var(--ms-4);
+	--z-3: var(--ms-3);
+	--z-2: var(--ms-2);
+	--z-1: var(--ms-1);
 	--z0: 0;
-	--z1: 1rem;
-	--z2: 1.2rem;
-	--z3: 1.44rem;
-	--z4: 1.728rem;
-	--z5: 2.074rem;
-	--z6: 2.488rem;
-	--z7: 2.986rem;
-	--z8: 3.582rem;
-	--z9: 4.3rem;
-	--z10: 5.16rem;
+	--z1: var(--ms0);
+	--z2: var(--ms1);
+	--z3: var(--ms2);
+	--z4: var(--ms3);
+	--z5: var(--ms4);
+	--z6: var(--ms5);
+	--z7: var(--ms6);
+	--z8: var(--ms7);
+	--z9: var(--ms8);
+	--z10: var(--ms9);
 }
 
 @custom-media --mq-xs (min-width: 20em);
