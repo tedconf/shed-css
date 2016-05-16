@@ -8,7 +8,6 @@
 @import "src/lib/display.css";
 @import "src/lib/float.css";
 @import "src/lib/vertical-align.css";
-@import "src/lib/position.css";
 @import "src/lib/sides.css";
 @import "src/lib/flex.css";
 @import "src/lib/size.css";
@@ -17,6 +16,7 @@
 @import "src/lib/text-decoration.css";
 @import "src/lib/overflow.css";
 @import "src/lib/radius.css";
+@import "src/lib/position.css";
 
 :root {
 	--ms-ratio: var(--minor-third);
@@ -42,6 +42,8 @@
 	--l-s: (d, t, n, l), (var(--l-h--default), var(--l-h--tight), var(--l-h--normal), var(--l-h--loose));
 	--dirs: all, top, bottom, left, right, x, y;
 	--dirs-short: a, t, b, l, r, x, y;
+	--pos-options: (absolute, relative, static, fixed, cover), (a, r, s, f, c);
+	--sides-options: (top, bottom, left, right);
 	--z-6: var(--ms-6);
 	--z-5: var(--ms-5);
 	--z-4: var(--ms-4);

@@ -12,3 +12,6 @@
 
 # 0.2.3 - 05/16/2016
 - Fix left + right decls for spacing helpers
+
+# 0.2.4 - 05/16/2016
+- Fix positional name collision
