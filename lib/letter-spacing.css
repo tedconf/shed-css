@@ -1,0 +1,36 @@
+:root {
+	--l-s: (d, t, n, l), (initial, -0.8em, .16em, .32em);
+}
+@each $mq in var(--mqs) {
+	@each $short, $val in var(--l-s) {
+		@if $(mq) == n {
+			/*---
+				title: $(short)
+				section: Letter Spacing
+				---
+
+				```html
+				<div class=".l-s:$(short)">l-s:$(short)</span>
+				```
+			*/
+			.l-s\:$(short) {
+				letter-spacing: $(val);
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				/*---
+					title: $(short)
+					section: Letter Spacing
+					---
+
+					```html
+					<div class=".l-s:$(short)@$(mq)">l-s:$(short)@$(mq)</span>
+					```
+				*/
+				.l-s\:$(short)\@$(mq) {
+					letter-spacing: $(val);
+				}
+			}
+		}
+	}
+}

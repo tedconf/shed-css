@@ -1,0 +1,51 @@
+:root {
+	--fl-options: (left, right, none, clear), (l, r, n, c);
+}
+
+@each $mq in var(--mqs) {
+	@if $(mq) == n {
+		@each $style, $var in var(--fl-options) {
+			/*---
+				title: $(style)
+				section: Float
+				---
+
+				```html
+				<span class=".fl:$(var)">fl:$(var)</span>
+				```
+			*/
+			@if $(style) == clear {
+				.fl\:$(var)::before,
+				.fl\:$(var)::after {
+					content: " ";
+					display: table;
+				}
+
+				.fl\:$(var)::after {
+					clear: both;
+				}
+			} @else {
+				.fl\:$(var) {
+					float: $(style);
+				}
+			}
+		}
+	} @else {
+		@media (--mq-$(mq)) {
+			@each $style, $var in var(--fl-options) {
+				/*---
+					title: $(style)
+					section: Float
+					---
+
+					```html
+					<span class=".fl:$(var)\@$(mq)">fl:$(var)@$(mq)</span>
+					```
+				*/
+				.fl\:$(var)\@$(mq) {
+					float: $(style);
+				}
+			}
+		}
+	}
+}

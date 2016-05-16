@@ -1,0 +1,52 @@
+{
+  "name": "funct",
+  "version": "0.1.0",
+  "description": "ted funct",
+  "main": "index.css",
+  "style": "index.css",
+  "files": [
+    "index.css",
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "install-peers": "npm ls 2>/dev/null | grep \"UNMET PEER DEPENDENCY\" | awk '{print $NF}' | xargs npm install -D",
+    "start": "npm run dev",
+    "dev": "npm-run-all build:css --parallel watch:css serve",
+    "compile:css": "postcss -u postcss-import -u postcss-at-rules-variables -u postcss-for -u postcss-each -u postcss-conditionals -u mdcss -u postcss-cssnext index.css -d ./dist",
+    "compress:css": "postcss -u cssnano ./dist/index.css -d ./dist",
+    "watch:css": "npm run compile:css -- -w './**/*.css'",
+    "build:css": "npm run compile:css",
+    "serve": "browser-sync start --server --files \"dist/*.css\" --index \"./styleguide/index.html\" --port \"1337\" --no-open",
+    "prepublish": "run-s compile:css compress:css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push_pages": "npm run build:docs && git add . && git commit -m 'update docs' && git subtree push --prefix demo/dist/ origin gh-pages"
+  },
+  "keywords": [
+    "css",
+    "functional",
+    "atomic",
+    "immutable",
+    "utility classes"
+  ],
+  "author": "Vince Speelman",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "2.12.8",
+    "chokidar-cli": "1.2.0",
+    "cssnano": "3.5.2",
+    "mdcss": "1.5.1",
+    "mdcss-theme-github": "2.2.0",
+    "npm-run-all": "2.1.0",
+    "postcss-cli": "2.5.2"
+  },
+  "peerDependencies": {
+    "postcss": "5.0.21",
+    "postcss-at-rules-variables": "0.0.21",
+    "postcss-conditionals": "2.0.2",
+    "postcss-cssnext": "2.5.2",
+    "postcss-each": "0.9.1",
+    "postcss-for": "2.0.2",
+    "postcss-import": "8.1.2"
+  }
+}

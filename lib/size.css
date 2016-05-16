@@ -1,0 +1,39 @@
+:root {
+	--w-sizes: (1of12, 1of10, 1of8, 1of6, 2of12, 1of5, 2of10, 1of4, 2of8, 3of12, 3of10, 1of3, 2of6, 4of12, 3of8, 2of5, 4of10, 5of12, 1of2, 2of4, 3of6, 4of8, 5of10, 6of12, 7of12, 3of5, 6of10, 5of8, 2of3, 4of6, 8of12, 7of10, 3of4, 6of8, 9of12, 4of5, 8of10, 5of6, 10of12, 7of8, 9of10, 11of12, full), (calc(100% * 1 / 12), 10%, 12.5%, calc(100% * 1 / 6), calc(100% * 1 / 6), 20%, 20%, 25%, 25%, 25%, 30%, calc(100% * 1 / 3), calc(100% * 1 / 3), calc(100% * 1 / 3), 37.5%, 40%, 40%, calc(100% * 5 / 12), 50%, 50%, 50%, 50%, 50%, 50%, calc(100% * 7 / 12), 60%, 60%, 62.5%, calc(100% * 2 / 3), calc(100% * 2 / 3), calc(100% * 2 / 3), 70%, 75%, 75%, 75%, 80%, 80%, calc(100% * 5 / 6), calc(100% * 5 / 6), 87.5%, 90%, calc(100% * 11 / 12), 100%);
+}
+
+@each $mq in var(--mqs) {
+	@each $name, $z in var(--w-sizes) {
+		@if $(mq) == n {
+			/*---
+			title: $(name)
+			section: Widths
+			---
+
+			```html
+			<div class=".w:$(name)">w:$(name)</span>
+			```
+			*/
+
+			.w\:$(name) {
+				width: $(z);
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				/*---
+				title: $(name)
+				section: Widths
+				---
+
+				```html
+				<div class=".w:$(name)@$(mq)">w:$(name)@$(mq)</span>
+				```
+				*/
+
+				.w\:$(name)\@$(mq) {
+					width: $(z);
+				}
+			}
+		}
+	}
+}

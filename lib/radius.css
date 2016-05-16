@@ -1,0 +1,19 @@
+:root {
+	--dirs: all, top, bottom, x, y;
+	--dirs-short: a, t, b, x, y;
+}
+
+@each $ms, $z in (var(--ms)), (var(--z)) {
+	/*---
+		title: all
+		section: Border Radius
+		---
+
+		```html
+		<div class="b-r:$(z)">b-r:$(z)</span>
+		```
+	*/
+	.b-r\:$(z) {
+		border-radius: var(--ms$(ms));
+	}
+}

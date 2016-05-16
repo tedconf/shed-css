@@ -1,0 +1,58 @@
+@import "lib/font-size.css";
+@import "lib/font-weight.css";
+@import "lib/font-family.css";
+@import "lib/font-style.css";
+@import "lib/text-align.css";
+@import "lib/space.css";
+@import "lib/display.css";
+@import "lib/float.css";
+@import "lib/vertical-align.css";
+@import "lib/position.css";
+@import "lib/sides.css";
+@import "lib/flex.css";
+@import "lib/size.css";
+@import "lib/line-height.css";
+@import "lib/letter-spacing.css";
+@import "lib/text-decoration.css";
+@import "lib/overflow.css";
+@import "lib/radius.css";
+
+:root {
+	--mqs: n, xs, sm ,md, lg, xl;
+	--ms: -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+	--z: \.4, \.5, \.6, \.7, \.8, \.9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+	--f-f-styles: (sans, serif, mono), (f-f-sans, f-f-serif, f-f-mono);
+	--f-f-sans: sans-serif;
+	--f-f-serif: serif;
+	--f-f-mono: monospace;
+	--f-s-styles: (normal, italic, oblique), (n, i, o);
+	--f-w-min: 100;
+	--f-w-max: 900;
+	--l-h: (d, t, n, l), (1, var(--ms2), var(--ms1), var(--ms4));
+	--l-s: (d, t, n, l), (initial, -0.8em, .16em, .32em);
+	--dirs: all, top, bottom, x, y;
+	--dirs-short: a, t, b, x, y;
+	--ms-6: .335rem;
+	--ms-5: .402rem;
+	--ms-4: .482rem;
+	--ms-3: .579rem;
+	--ms-2: .694rem;
+	--ms-1: .833rem;
+	--ms0: 0;
+	--ms1: 1rem;
+	--ms2: 1.2rem;
+	--ms3: 1.44rem;
+	--ms4: 1.728rem;
+	--ms5: 2.074rem;
+	--ms6: 2.488rem;
+	--ms7: 2.986rem;
+	--ms8: 3.582rem;
+	--ms9: 4.3rem;
+	--ms10: 5.16rem;
+}
+
+@custom-media --mq-xs (min-width: 20em);
+@custom-media --mq-sm (min-width: 30em);
+@custom-media --mq-md (min-width: 37em);
+@custom-media --mq-lg (min-width: 50em);
+@custom-media --mq-xl (min-width: 75em);

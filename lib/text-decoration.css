@@ -1,0 +1,37 @@
+:root {
+	--t-d: (n, u, s), (none, underline, strikethrough);
+}
+@each $mq in var(--mqs) {
+	@each $short, $val in var(--t-d) {
+		@if $(mq) == n {
+			/*---
+				title: $(short)
+				section: Text Decoration
+				---
+
+				```html
+				<div class=".t-d:$(short)">t-d:$(short)</span>
+				```
+			*/
+			.t-d\:$(short) {
+				text-decoration: $(val);
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				/*---
+					title: $(short)
+					section: Text Decoration
+					---
+
+					```html
+					<div class=".t-d:$(short)@$(mq)">t-d:$(short)@$(mq)</span>
+					```
+				*/
+				.t-d\:$(short)\@$(mq) {
+					text-decoration: $(val);
+				}
+			}
+		}
+	}
+}
+
