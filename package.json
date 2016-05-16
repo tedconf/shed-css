@@ -1,11 +1,10 @@
 {
   "name": "shed-css",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Functional and customizable CSS utilities with familiar names",
-  "main": "index.css",
-  "style": "index.css",
+  "main": "lib/index.css",
+  "style": "lib/index.css",
   "files": [
-    "index.css",
     "dist",
     "lib"
   ],
@@ -20,8 +19,8 @@
     "build:css:dist": "run-s 'compile:css -- -d ./dist' compress:css",
     "build:css:lib": "npm run compile:css:loops -- -d ./lib/",
     "serve": "browser-sync start --server --files \"dist/*.css\" --index \"./styleguide/index.html\" --port \"1337\" --no-open",
-    "prepublish": "run-p build:css:lib build:css:dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "run-p build:css:lib build:css:dist",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "push_pages": "npm run build:docs && git add . && git commit -m 'update docs' && git subtree push --prefix demo/dist/ origin gh-pages"
   },
   "keywords": [
@@ -41,6 +40,7 @@
     "mdcss": "1.5.1",
     "mdcss-theme-github": "2.2.0",
     "npm-run-all": "2.1.0",
+    "npmpub": "3.1.0",
     "postcss-cli": "2.5.2"
   },
   "peerDependencies": {
