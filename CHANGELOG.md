@@ -24,3 +24,8 @@
 
 # 0.2.7 - 05/16/2016
 - use `-` in display helpers
+
+# 0.3.0 - 05/16/2016
+- add var interpolation in comments
+- add z-index utils
+- fix letter spacing variable names
