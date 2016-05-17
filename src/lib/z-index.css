@@ -1,0 +1,35 @@
+@each $mq in var(--mqs) {
+	@if $(mq) == n {
+		@for $zi from -5 to 5 {
+			/*---
+				title: $(zi)
+				section: z-index
+				---
+
+				```example:html
+				<span class=".z-i:$(zi)">z-i:$(zi)</span>
+				```
+			*/
+			.z-i\:$(zi) {
+				z-index: $(zi);
+			}
+		}
+	} @else {
+		@media (--mq-$(mq)) {
+			@for $zi from -5 to 5 {
+				/*---
+					title: $(zi)
+					section: z-index
+					---
+
+					```example:html
+					<span class=".z-i:$(zi)@$(mq)">z-i:$(zi)@$(mq)</span>
+					```
+				*/
+				.z-i\:$(zi)\@$(mq) {
+					z-index: $(zi);
+				}
+			}
+		}
+	}
+}
