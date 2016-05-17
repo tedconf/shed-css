@@ -4,33 +4,33 @@
 
 @each $mq in var(--mqs) {
 	@if $(mq) == n {
-		@each $style, $var in var(--f-s-styles) {
+		@each $style, $sshort in var(--f-s-styles) {
 			/*---
 				title: $(style)
 				section: Font Style
 				---
 
 				```html
-				<span class=".f-s:$(var)">f-s:$(var)</span>
+				<span class=".f-s:$(sshort)">f-s:$(sshort)</span>
 				```
 			*/
-			.f-s\:$(var) {
+			.f-s\:$(sshort) {
 				font-style: $(style);
 			}
 		}
 	} @else {
 		@media (--mq-$(mq)) {
-			@each $style, $var in (var(--f-s-styles)), (var(--f-s-styles-short)) {
+			@each $style, $sshort in var(--f-s-styles) {
 				/*---
 					title: $(style)
 					section: Font Style
 					---
 
 					```html
-					<span class=".f-s:$(var)\@$(mq)">f-s:$(var)@$(mq)</span>
+					<span class=".f-s:$(sshort)\@$(mq)">f-s:$(sshort)@$(mq)</span>
 					```
 				*/
-				.f-s\:$(var)\@$(mq) {
+				.f-s\:$(sshort)\@$(mq) {
 					font-style: $(style);
 				}
 			}
