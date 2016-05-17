@@ -2,12 +2,12 @@
 	@if $(mq) == n {
 		@each $ms, $z in (var(--ms)), (var(--z)) {
 			/*---
-				title: Font Size
-				section: Typography
+				title: size: $(z)
+				section: font-size
 				---
 
-				```html
-				<span class="f:$(z)">f:$(z)</span>
+				```example:html
+				<div class="f:$(z)">f:$(z)</div>
 				```
 			*/
 			.f\:$(z),
@@ -19,12 +19,12 @@
 		@media (--mq-$(mq)) {
 			@each $ms, $z in (var(--ms)), (var(--z)) {
 				/*---
-					title: Font Size
-					section: Typography
+					title: size: $(z)@$(mq)
+					section: font-size
 					---
 
-					```html
-					<span class="f:$(z)@$(mq)">f:$(z)@$(mq)</span>
+					```example:html
+					<div class="f:$(z)@$(mq)">f:$(z)@$(mq)</div>
 					```
 				*/
 				.f\:$(z)\@$(mq),

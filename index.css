@@ -1,5 +1,6 @@
 @import "css-modularscale";
 @import "src/lib/font-size.css";
+@import "src/lib/z-index.css";
 @import "src/lib/font-weight.css";
 @import "src/lib/font-family.css";
 @import "src/lib/font-style.css";

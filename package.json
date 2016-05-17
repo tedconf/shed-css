@@ -11,11 +11,11 @@
   "scripts": {
     "install-peers": "npm ls 2>/dev/null | grep \"UNMET PEER DEPENDENCY\" | awk '{print $NF}' | xargs npm install -D",
     "start": "npm run dev",
-    "dev": "npm-run-all build:css --parallel watch:css serve",
+    "dev": "npm-run-all build:css:lib --parallel watch:css serve",
     "compile:css:loops": "postcss -u postcss-import -u postcss-at-rules-variables -u postcss-for -u postcss-each -u postcss-conditionals index.css",
-    "compile:css": "npm run compile:css:loops -- -u mdcss -u postcss-cssnext index.css",
+    "compile:css": "npm run compile:css:loops -- --mdcss.examples.base=[styleguide] -u postcss-cssnext index.css",
     "compress:css": "postcss -u cssnano ./dist/index.css -d ./dist",
-    "watch:css": "npm run compile:css -- -w './**/*.css' ./dist",
+    "watch:css": "npm run compile:css -- -w './**/*.css' -d ./dist",
     "build:css:dist": "run-s 'compile:css -- -d ./dist' compress:css",
     "build:css:lib": "npm run compile:css:loops -- -d ./lib/",
     "serve": "browser-sync start --server --files \"dist/*.css\" --index \"./styleguide/index.html\" --port \"1337\" --no-open",
@@ -43,13 +43,14 @@
     "npm-run-all": "2.1.0",
     "npmpub": "3.1.0",
     "postcss": "5.0.21",
-    "postcss-cssnext": "2.5.2",
-    "postcss-cli": "2.5.2",
     "postcss-at-rules-variables": "0.0.21",
+    "postcss-cli": "2.5.2",
     "postcss-conditionals": "2.0.2",
+    "postcss-cssnext": "2.5.2",
     "postcss-each": "0.9.1",
     "postcss-for": "2.0.2",
-    "postcss-import": "8.1.2"
+    "postcss-import": "8.1.2",
+    "postcss-simple-vars": "https://github.com/vinspee/postcss-simple-vars/tarball/comments"
   },
   "peerDependencies": {
     "postcss": "5.0.21",

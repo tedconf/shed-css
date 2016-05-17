@@ -1,5 +1,5 @@
 :root {
-	--l-s: (d, t, n, l), (var(--l-s-default), var(--l-s-tight), var(--l-s-normal), var(--l-s-loose));
+	--l-s: (d, t, n, l), (var(--l-s--default), var(--l-s--tight), var(--l-s--normal), var(--l-s--loose));
 }
 
 @each $mq in var(--mqs) {
