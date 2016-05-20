@@ -63,5 +63,3 @@ Shed is a collection of functional CSS utilities aiming to save you the trouble 
 @custom-media --mq-lg (min-width: 50em);
 @custom-media --mq-xl (min-width: 75em);
 ```
-
-![Rudloffed](https://avatars0.githubusercontent.com/u/1984999?)
