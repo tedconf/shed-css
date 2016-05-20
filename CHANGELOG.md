@@ -32,3 +32,7 @@
 
 # 0.3.1 - 05/17/2016
 - fix mq var bug in font-style
+
+# 0.4.1 - 05/20/2016
+- add max-width
+- update css-modularscale
