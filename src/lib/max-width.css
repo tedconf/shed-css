@@ -11,7 +11,7 @@
 				```
 			*/
 			.m-w\:$(z) {
-				max-width: var(--ms$(ms));
+				max-width: var(--z$(ms));
 			}
 		}
 	} @else {

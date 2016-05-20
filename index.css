@@ -18,12 +18,13 @@
 @import "src/lib/overflow.css";
 @import "src/lib/radius.css";
 @import "src/lib/position.css";
+@import "src/lib/max-width";
 
 :root {
 	--ms-ratio: var(--minor-third);
 	--mqs: n, xs, sm ,md, lg, xl;
-	--ms: -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
-	--z: \.4, \.5, \.6, \.7, \.8, \.9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+	--ms: -dot1, -dot2, -dot3, -dot4, -dot5, -dot6, -dot7, -dot8, -dot9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+	--z: \.1, \.2, \.3, \.4, \.5, \.6, \.7, \.8, \.9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 	--f-f-styles: (sans, serif, mono), (f-f-sans, f-f-serif, f-f-mono);
 	--f-f-sans: sans-serif;
 	--f-f-serif: serif;
@@ -44,12 +45,15 @@
 	--dirs-short: a, t, b, l, r, x, y;
 	--pos-options: (absolute, relative, static, fixed, cover), (a, r, s, f, c);
 	--sides-options: (top, bottom, left, right);
-	--z-6: var(--ms-6);
-	--z-5: var(--ms-5);
-	--z-4: var(--ms-4);
-	--z-3: var(--ms-3);
-	--z-2: var(--ms-2);
-	--z-1: var(--ms-1);
+	--z-dot9: var(--ms-1);
+	--z-dot8: var(--ms-2);
+	--z-dot7: var(--ms-3);
+	--z-dot6: var(--ms-4);
+	--z-dot5: var(--ms-5);
+	--z-dot4: var(--ms-6);
+	--z-dot3: var(--ms-7);
+	--z-dot2: var(--ms-8);
+	--z-dot1: var(--ms-9);
 	--z0: 0;
 	--z1: var(--ms0);
 	--z2: var(--ms1);
