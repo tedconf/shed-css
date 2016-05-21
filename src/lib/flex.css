@@ -110,7 +110,7 @@
 }
 
 @each $mq in var(--mqs) {
-	@each $prop, $short in var(--flx-j-c) {
+	@each $prop, $short in var(--flx-a-i) {
 		@if $(mq) == n {
 			/*---
 				title: Align Items: $(prop)
@@ -258,7 +258,7 @@
 				```
 			*/
 			.flx-g\:$i {
-				flex-grow: $i 1 0%;
+				flex-grow: $i;
 			}
 		} @else {
 			@media(--mq-$(mq)) {
@@ -272,7 +272,7 @@
 					```
 				*/
 				.flx-g\:$i\@$(mq) {
-					flex-grow: $i 1 0%;
+					flex-grow: $i;
 				}
 			}
 		}
