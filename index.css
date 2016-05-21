@@ -1,24 +1,26 @@
 @import "css-modularscale";
 @import "src/lib/font-size.css";
-@import "src/lib/z-index.css";
-@import "src/lib/font-weight.css";
-@import "src/lib/font-family.css";
-@import "src/lib/font-style.css";
-@import "src/lib/text-align.css";
-@import "src/lib/space.css";
-@import "src/lib/display.css";
-@import "src/lib/float.css";
-@import "src/lib/vertical-align.css";
-@import "src/lib/sides.css";
-@import "src/lib/flex.css";
-@import "src/lib/size.css";
-@import "src/lib/line-height.css";
-@import "src/lib/letter-spacing.css";
-@import "src/lib/text-decoration.css";
-@import "src/lib/overflow.css";
-@import "src/lib/radius.css";
-@import "src/lib/position.css";
-@import "src/lib/max-width";
+/*
+ * @import "src/lib/z-index.css";
+ * @import "src/lib/font-weight.css";
+ * @import "src/lib/font-family.css";
+ * @import "src/lib/font-style.css";
+ * @import "src/lib/text-align.css";
+ * @import "src/lib/space.css";
+ * @import "src/lib/display.css";
+ * @import "src/lib/float.css";
+ * @import "src/lib/vertical-align.css";
+ * @import "src/lib/sides.css";
+ * @import "src/lib/flex.css";
+ * @import "src/lib/size.css";
+ * @import "src/lib/line-height.css";
+ * @import "src/lib/letter-spacing.css";
+ * @import "src/lib/text-decoration.css";
+ * @import "src/lib/overflow.css";
+ * @import "src/lib/radius.css";
+ * @import "src/lib/position.css";
+ * @import "src/lib/max-width";
+ */
 
 :root {
 	--ms-ratio: var(--minor-third);

@@ -1,15 +1,43 @@
+/*---
+title: Font Size
+section: Typoghraphy
+---
+
+## .f1
+<p class="f:1">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f2
+<p class="f:2">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f3
+<p class="f:3">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f4
+<p class="f:4">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f5
+<p class="f:5">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f6
+<p class="f:6">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f7
+<p class="f:7">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f8
+<p class="f:8">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f9
+<p class="f:9">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+## .f10
+<p class="f:10">We promptly judged antique ivory buckles for the next prize. Heavy boxes perform quick waltzes and jigs. Blowzy night-frumps vex'd Jack Q</p>
+
+*/
+
 @each $mq in var(--mqs) {
 	@if $(mq) == n {
 		@each $ms, $z in (var(--ms)), (var(--z)) {
-			/*---
-				title: size: $(z)
-				section: font-size
-				---
-
-				```example:html
-				<div class="f:$(z)">f:$(z)</div>
-				```
-			*/
 			.f\:$(z),
 			.f-z\:$(z) {
 				font-size: var(--z$(ms));
@@ -18,15 +46,6 @@
 	} @else {
 		@media (--mq-$(mq)) {
 			@each $ms, $z in (var(--ms)), (var(--z)) {
-				/*---
-					title: size: $(z)@$(mq)
-					section: font-size
-					---
-
-					```example:html
-					<div class="f:$(z)@$(mq)">f:$(z)@$(mq)</div>
-					```
-				*/
 				.f\:$(z)\@$(mq),
 				.f-z\:$(z)\@$(mq) {
 					font-size: var(--z$(ms));
