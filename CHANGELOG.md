@@ -33,6 +33,14 @@
 # 0.3.1 - 05/17/2016
 - fix mq var bug in font-style
 
-# 0.4.1 - 05/20/2016
+# 0.4.1 - 05/20/2016 (PULLED)
+this release accidentally commented imports out.
+
+# 0.4.2 - 05/20/2016
 - add max-width
 - update css-modularscale
+
+# 0.4.3 - 05/21/2016
+- fix typo in flex-grow, causing it to be invalid.
+- fixed a typo where we were using the justify-content attributes
+  for the align-items properties.
