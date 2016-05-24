@@ -1,0 +1,39 @@
+:root {
+	--t-t-options: (uppercase, lowercase, capitalize, none), (u, l, c, n);
+}
+
+@each $mq in var(--mqs) {
+	@if $(mq) == n {
+		@each $style, $var in var(--t-t-options) {
+			/*---
+				title: $(style)
+				section: text-transform
+				---
+
+				```html
+				<span class=".t-t:$(var)">t-t:$(var)</span>
+				```
+			*/
+			.t-t\:$(var) {
+				text-transform: $(style);
+			}
+		}
+	} @else {
+		@media (--mq-$(mq)) {
+			@each $style, $var in var(--t-t-options) {
+				/*---
+					title: $(style)
+					section: text-transform
+					---
+
+					```html
+					<span class=".t-t:$(var)\@$(mq)">t-t:$(var)@$(mq)</span>
+					```
+				*/
+				.t-t\:$(var)\@$(mq) {
+					text-transform: $(style);
+				}
+			}
+		}
+	}
+}

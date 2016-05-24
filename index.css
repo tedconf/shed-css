@@ -18,7 +18,8 @@
 @import "src/lib/overflow.css";
 @import "src/lib/radius.css";
 @import "src/lib/position.css";
-@import "src/lib/max-width";
+@import "src/lib/max-width.css";
+@import "src/lib/text-transform.css";
 
 :root {
 	--ms-ratio: var(--minor-third);

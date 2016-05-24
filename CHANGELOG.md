@@ -47,3 +47,6 @@ this release accidentally commented imports out.
 
 # 0.5.0 - 05/24/2016
 - add `display: none` utilities
+
+# 0.6.0 - 05/24/2016
+- add `text-transform` utilities
