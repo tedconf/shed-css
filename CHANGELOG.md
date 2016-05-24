@@ -44,3 +44,6 @@ this release accidentally commented imports out.
 - fix typo in flex-grow, causing it to be invalid.
 - fixed a typo where we were using the justify-content attributes
   for the align-items properties.
+
+# 0.5.0 - 05/24/2016
+- add `display: none` utilities

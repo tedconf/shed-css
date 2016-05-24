@@ -43,6 +43,8 @@
 	--l-s--loose: .32em;
 	--dirs: all, top, bottom, left, right, x, y;
 	--dirs-short: a, t, b, l, r, x, y;
+	--display-props: block, inline-block, inline, flex, table, table-cell, none;
+	--display-shorthands: b, i-b, i, f, t, t-c, n;
 	--pos-options: (absolute, relative, static, fixed, cover), (a, r, s, f, c);
 	--sides-options: (top, bottom, left, right);
 	--z-dot9: var(--ms-1);

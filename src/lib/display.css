@@ -1,6 +1,6 @@
 :root {
-	--display-props: block, inline-block, inline, flex, table, table-cell;
-	--display-shorthands: b, i-b, i, f, t, t-c;
+	--display-props: block, inline-block, inline, flex, table, table-cell, none;
+	--display-shorthands: b, i-b, i, f, t, t-c, n;
 }
 @each $mq in var(--mqs) {
 	@each $prop, $short in (var(--display-props)), (var(--display-shorthands)) {
