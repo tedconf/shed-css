@@ -50,3 +50,6 @@ this release accidentally commented imports out.
 
 # 0.6.0 - 05/24/2016
 - add `text-transform` utilities
+
+# 0.6.1 - 05/24/2016
+- fix `margin: auto` props
