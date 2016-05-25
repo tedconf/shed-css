@@ -13,6 +13,10 @@
 							$(prop)-top: auto;
 							$(prop)-bottom: auto;
 						}
+					} @else if $(dir) == all {
+						.$(short)\:a {
+							$(prop): auto;
+						}
 					} @else {
 						.$(short)-$(dir-short)\:a {
 							$(prop)-$(dir): auto;
@@ -74,26 +78,25 @@
 				@media(--mq-$(mq)) {
 					@if $(prop) == margin {
 						@if $(dir) == all {
-							.$(short)-$(dir)\:a\@$(mq) {
+							.$(short)\:a\@$(mq) {
 								$(prop): auto;
-							} @else if $(dir) == x {
-								.$(short)-$(dir-short)\:a\@$(mq) {
-									$(prop)-left: auto;
-									$(prop)-right: auto;
-								}
-							} @else if $(dir) == y {
-								.$(short)-$(dir-short)\:a\@$(mq) {
-									$(prop)-top: auto;
-									$(prop)-bottom: auto;
-								}
-							} @else {
-								.$(short)-$(dir)\:a\@$(mq) {
-									$(prop)-$(dir-short): auto;
-								}
+							}
+						} @else if $(dir) == x {
+							.$(short)-$(dir-short)\:a\@$(mq) {
+								$(prop)-left: auto;
+								$(prop)-right: auto;
+							}
+						} @else if $(dir) == y {
+							.$(short)-$(dir-short)\:a\@$(mq) {
+								$(prop)-top: auto;
+								$(prop)-bottom: auto;
+							}
+						} @else {
+							.$(short)-$(dir-short)\:a\@$(mq) {
+								$(prop)-$(dir): auto;
 							}
 						}
 					}
-
 					@each $ms, $z in (var(--ms)), (var(--z)) {
 						@if $(dir) == all {
 							/*---
