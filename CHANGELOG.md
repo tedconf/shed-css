@@ -53,3 +53,6 @@ this release accidentally commented imports out.
 
 # 0.6.1 - 05/24/2016
 - fix `margin: auto` props
+
+# 0.7.0 - 05/27/2016
+- add `h:full` for full height
