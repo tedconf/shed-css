@@ -40,6 +40,9 @@
 
 @each $mq in var(--mqs) {
 	@if $(mq) == n {
+		.h\:full {
+			height: 100%;
+		}
 		@each $ms, $z in (var(--z)), (var(--z)) {
 			/*---
 				title: $(z)
@@ -56,6 +59,9 @@
 		}
 	} @else {
 		@media (--mq-$(mq)) {
+			.h\:full\@$(mq) {
+				height: 100%;
+			}
 			@each $ms, $z in (var(--z)), (var(--z)) {
 				/*---
 					title: $(z)
@@ -69,6 +75,7 @@
 				.h\:$(z)\@$(mq) {
 					height: var(--z$(ms));
 				}
+
 			}
 		}
 	}
