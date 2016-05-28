@@ -56,3 +56,6 @@ this release accidentally commented imports out.
 
 # 0.7.0 - 05/27/2016
 - add `h:full` for full height
+
+# 0.7.1 - 05/28/2016
+- fix misnamed "t-d:s" ~> "t-d:l-t"
