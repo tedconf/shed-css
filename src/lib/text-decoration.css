@@ -1,5 +1,5 @@
 :root {
-	--t-d: (n, u, s), (none, underline, strikethrough);
+	--t-d: (n, u, l-t), (none, underline, line-through);
 }
 @each $mq in var(--mqs) {
 	@each $short, $val in var(--t-d) {
