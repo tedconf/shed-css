@@ -5,31 +5,11 @@
 @each $mq in var(--mqs) {
 	@each $name, $z in var(--w-sizes) {
 		@if $(mq) == n {
-			/*---
-			title: $(name)
-			section: Widths
-			---
-
-			```html
-			<div class=".w:$(name)">w:$(name)</span>
-			```
-			*/
-
 			.w\:$(name) {
 				width: $(z);
 			}
 		} @else {
 			@media(--mq-$(mq)) {
-				/*---
-				title: $(name)
-				section: Widths
-				---
-
-				```html
-				<div class=".w:$(name)@$(mq)">w:$(name)@$(mq)</span>
-				```
-				*/
-
 				.w\:$(name)\@$(mq) {
 					width: $(z);
 				}
@@ -43,16 +23,7 @@
 		.h\:full {
 			height: 100%;
 		}
-		@each $ms, $z in (var(--z)), (var(--z)) {
-			/*---
-				title: $(z)
-				section: Height
-				---
-
-				```html
-				<span class="h:$(z)">h:$(z)</span>
-				```
-			*/
+		@each $ms, $z in (var(--ms)), (var(--z)) {
 			.h\:$(z) {
 				height: var(--z$(ms));
 			}
@@ -62,16 +33,7 @@
 			.h\:full\@$(mq) {
 				height: 100%;
 			}
-			@each $ms, $z in (var(--z)), (var(--z)) {
-				/*---
-					title: $(z)
-					section: Height
-					---
-
-					```html
-					<span class="h:$(z)@$(mq)">h:$(z)@$(mq)</span>
-					```
-				*/
+			@each $ms, $z in (var(--ms)), (var(--z)) {
 				.h\:$(z)\@$(mq) {
 					height: var(--z$(ms));
 				}
