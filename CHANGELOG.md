@@ -59,3 +59,6 @@ this release accidentally commented imports out.
 
 # 0.7.1 - 05/28/2016
 - fix misnamed "t-d:s" ~> "t-d:l-t"
+
+# 0.7.2 - 05/31/2016
+- fix typo on height variable
