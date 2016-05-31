@@ -62,3 +62,6 @@ this release accidentally commented imports out.
 
 # 0.7.2 - 05/31/2016
 - fix typo on height variable
+
+# 0.7.3 - 05/31/2016
+- fix typo on baseline alignment
