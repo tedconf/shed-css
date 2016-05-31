@@ -1,5 +1,5 @@
 :root {
-	--v-a-options: (middle, baseline, top, bottom, center), (m, b, t, b, c);
+	--v-a-options: (middle, baseline, top, bottom, center), (m, bl, t, b, c);
 }
 
 @each $mq in var(--mqs) {
