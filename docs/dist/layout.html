@@ -1,0 +1,2409 @@
+<!doctype html>
+<html
+	class="
+		f-menu-active
+		bg:purple
+		p-x:.7
+		c:white
+		f-f:sans
+		o-x:h
+	"
+	lang="eng"
+>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title></title>
+
+			<link rel="stylesheet" href="/assets/fabricator/styles/f.css">
+
+		<!-- toolkit styles -->
+		<link rel="stylesheet" href="/assets/toolkit/styles/toolkit.css">
+		<!-- /toolkit styles -->
+	</head>
+
+	<body>
+			<!-- fabricator icons -->
+			<svg style="display: none;">
+				<symbol id="f-icon-code" viewBox="0 0 512 512">
+					<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+				</symbol>
+				<symbol id="f-icon-notes" viewBox="0 0 512 512">
+					<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+				</symbol>
+				<symbol id="f-icon-labels" viewBox="0 0 512 512">
+					<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+				</symbol>
+				<symbol id="f-icon-menu" viewBox="0 0 512 512">
+					<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+				</symbol>
+				<symbol id="f-icon-settings" viewBox="0 0 512 512">
+					<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+				</symbol>
+			</svg>
+			<!-- /fabricator icons -->
+			<!-- fabricator menu -->
+			<div class="f-menu bg:blue-d c:white">
+				<div class="f-controls c:white">
+					<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+						<svg>
+							<use xlink:href="#f-icon-labels" />
+						</svg>
+					</div>
+					<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+						<svg>
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</div>
+					<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</div>
+				</div>
+			
+				<ul class="p-x:.7">
+			
+					<li class="p-y:.5">
+						<a href="index.html" class="f-menu__heading">Overview</a>
+					</li>
+			
+					<li class="m-b:3">
+						<a
+							href="border.html"
+							class="
+								f-menu__heading
+								f-w:700
+								f:2
+								t-t:u
+								c:blue-l
+							"
+						>
+							Border
+						</a>
+						<ul>
+							<li>
+								<a href="border.html#00-border-radius">Border Radius</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-b:3">
+						<a
+							href="layout.html"
+							class="
+								f-menu__heading
+								f-w:700
+								f:2
+								t-t:u
+								c:blue-l
+							"
+						>
+							Layout
+						</a>
+						<ul>
+							<li>
+								<a href="layout.html#00-display">Display</a>
+							</li>
+							<li>
+								<a href="layout.html#01-float">Float</a>
+							</li>
+							<li>
+								<a href="layout.html#02-vertical-align">Vertical Align</a>
+							</li>
+							<li>
+								<a href="layout.html#flexbox">Flexbox</a>
+							</li>
+							<li>
+								<a href="layout.html#size">Size</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-b:3">
+						<a
+							href="position.html"
+							class="
+								f-menu__heading
+								f-w:700
+								f:2
+								t-t:u
+								c:blue-l
+							"
+						>
+							Position
+						</a>
+						<ul>
+							<li>
+								<a href="position.html#00-position">Position</a>
+							</li>
+							<li>
+								<a href="position.html#01-overflow">Overflow</a>
+							</li>
+							<li>
+								<a href="position.html#02-z-index">Z Index</a>
+							</li>
+							<li>
+								<a href="position.html#sides">Sides</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-b:3">
+						<a
+							href="space.html"
+							class="
+								f-menu__heading
+								f-w:700
+								f:2
+								t-t:u
+								c:blue-l
+							"
+						>
+							Space
+						</a>
+						<ul>
+							<li>
+								<a href="space.html#00-margin">Margin</a>
+							</li>
+							<li>
+								<a href="space.html#01-padding">Padding</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-b:3">
+						<a
+							href="structures.html"
+							class="
+								f-menu__heading
+								f-w:700
+								f:2
+								t-t:u
+								c:blue-l
+							"
+						>
+							Structures
+						</a>
+						<ul>
+							<li>
+								<a href="structures.html#form">Form</a>
+							</li>
+						</ul>
+					</li>
+					<li class="m-b:3">
+						<a
+							href="type.html"
+							class="
+								f-menu__heading
+								f-w:700
+								f:2
+								t-t:u
+								c:blue-l
+							"
+						>
+							Type
+						</a>
+						<ul>
+							<li>
+								<a href="type.html#00-font-size">Font Size</a>
+							</li>
+							<li>
+								<a href="type.html#01-font-weight">Font Weight</a>
+							</li>
+							<li>
+								<a href="type.html#02-font-style">Font Style</a>
+							</li>
+							<li>
+								<a href="type.html#03-font-family">Font Family</a>
+							</li>
+							<li>
+								<a href="type.html#03-line-height">Line Height</a>
+							</li>
+							<li>
+								<a href="type.html#04-letter-spacing">Letter Spacing</a>
+							</li>
+							<li>
+								<a href="type.html#05-text-decoration">Text Decoration</a>
+							</li>
+							<li>
+								<a href="type.html#06-text-transform">Text Transform</a>
+							</li>
+							<li>
+								<a href="type.html#07-text-align">Text Align</a>
+							</li>
+						</ul>
+					</li>
+			
+					<li>
+						<a href="pages.html" class="f-menu__heading">Pages</a>
+						<ul>
+							<li>
+								<a href="pages/home.html">Home</a>
+							</li>
+						</ul>
+					</li>
+			
+					<li>
+						<a href="docs.html" class="f-menu__heading">Docs</a>
+						<ul>
+							<li>
+								<a href="docs.html#custom-theme">Custom Theme</a>
+							</li>
+						</ul>
+					</li>
+			
+					<li class="p-y:.5">
+						<a href="customization.html" class="f:3 f-menu__heading">🚲🏚</a>
+					</li>
+			
+				</ul>
+			</div>
+			<!-- /fabricator menu -->
+			<div class="f-container">
+				<div class="f-control-bar">
+					<div class="f-control f-menu-toggle">
+						<svg>
+							<use xlink:href="#f-icon-menu" />
+						</svg>
+					</div>
+				</div>
+
+		
+<h1 data-f-toggle="labels">Layout</h1>
+
+<div class="f-item-group m-b:7 b-b:black" id="00-display">
+
+	<div class="m-b:5" data-f-toggle="labels">
+		<h2 class="f:5 m-b:.5 c:green">Display</h2>
+		<div
+			class="
+			"
+		>
+			<button
+				data-f-toggle-control="notes"
+				title="Toggle Notes"
+				class="
+					cur:p
+					d:i-b
+					m-r:.2
+					c:white
+					hover/c:green
+				"
+			>
+				<svg class="h:2 m-w:2">
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</button>
+			<button
+				class="
+					cur:p
+					d:i-b
+					m-l:.2
+					c:white
+					hover/c:green
+				"
+				data-f-toggle-control="code"
+				title="Toggle Code"
+			>
+				<svg class="h:2 m-w:2">
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>Display utilities across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div>
+	<div class="d:b">display: block</div>
+</div>
+<div>
+	<div class="d:i-b">display: inline-block</div>
+</div>
+<div>
+	<div class="d:i">display: inline</div>
+</div>
+<div>
+	<div class="d:f">display: flex</div>
+</div>
+<div>
+	<div class="d:t">display: table</div>
+</div>
+<div>
+	<div class="d:t-c">display: table-cell</div>
+</div>
+<div>
+	<div class="d:n">display: none</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div&gt;
+	&lt;div class=&quot;d:b&quot;&gt;display: block&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+	&lt;div class=&quot;d:i-b&quot;&gt;display: inline-block&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+	&lt;div class=&quot;d:i&quot;&gt;display: inline&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+	&lt;div class=&quot;d:f&quot;&gt;display: flex&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+	&lt;div class=&quot;d:t&quot;&gt;display: table&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+	&lt;div class=&quot;d:t-c&quot;&gt;display: table-cell&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+	&lt;div class=&quot;d:n&quot;&gt;display: none&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+<div class="f-item-group m-b:7 b-b:black" id="01-float">
+
+	<div class="m-b:5" data-f-toggle="labels">
+		<h2 class="f:5 m-b:.5 c:green">Float</h2>
+		<div
+			class="
+			"
+		>
+			<button
+				data-f-toggle-control="notes"
+				title="Toggle Notes"
+				class="
+					cur:p
+					d:i-b
+					m-r:.2
+					c:white
+					hover/c:green
+				"
+			>
+				<svg class="h:2 m-w:2">
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</button>
+			<button
+				class="
+					cur:p
+					d:i-b
+					m-l:.2
+					c:white
+					hover/c:green
+				"
+				data-f-toggle-control="code"
+				title="Toggle Code"
+			>
+				<svg class="h:2 m-w:2">
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>float utilities across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="fl:c">
+	<div class="fl:l">float: left</div>
+</div>
+
+<div class="fl:c">
+	<div class="fl:r">float: right</div>
+</div>
+
+<div>
+	<div class="fl:n">float: none</div>
+</div>
+
+<div>
+	<div class="fl:c">float: clear (clearfix)</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;fl:c&quot;&gt;
+	&lt;div class=&quot;fl:l&quot;&gt;float: left&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;fl:c&quot;&gt;
+	&lt;div class=&quot;fl:r&quot;&gt;float: right&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+	&lt;div class=&quot;fl:n&quot;&gt;float: none&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+	&lt;div class=&quot;fl:c&quot;&gt;float: clear (clearfix)&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+<div class="f-item-group m-b:7 b-b:black" id="02-vertical-align">
+
+	<div class="m-b:5" data-f-toggle="labels">
+		<h2 class="f:5 m-b:.5 c:green">Vertical Align</h2>
+		<div
+			class="
+			"
+		>
+			<button
+				data-f-toggle-control="notes"
+				title="Toggle Notes"
+				class="
+					cur:p
+					d:i-b
+					m-r:.2
+					c:white
+					hover/c:green
+				"
+			>
+				<svg class="h:2 m-w:2">
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</button>
+			<button
+				class="
+					cur:p
+					d:i-b
+					m-l:.2
+					c:white
+					hover/c:green
+				"
+				data-f-toggle-control="code"
+				title="Toggle Code"
+			>
+				<svg class="h:2 m-w:2">
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>utilities for vertical alignment across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="d:t h:10 m-b:1 b">
+	<div class="v-a:t d:t-c">vertical-align: top</div>
+</div>
+
+<div class="d:t h:10 m-b:1 b">
+	<div class="v-a:m d:t-c">vertical-align: middle</div>
+</div>
+
+<div class="d:t h:10 m-b:1 b">
+	<div class="v-a:b d:t-c">vertical-align: bottom</div>
+</div>
+
+<div class="d:t h:10 m-b:1 b">
+	<div class="v-a:bl d:t-c">vertical-align: baseline</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;d:t h:10 m-b:1 b&quot;&gt;
+	&lt;div class=&quot;v-a:t d:t-c&quot;&gt;vertical-align: top&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:t h:10 m-b:1 b&quot;&gt;
+	&lt;div class=&quot;v-a:m d:t-c&quot;&gt;vertical-align: middle&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:t h:10 m-b:1 b&quot;&gt;
+	&lt;div class=&quot;v-a:b d:t-c&quot;&gt;vertical-align: bottom&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:t h:10 m-b:1 b&quot;&gt;
+	&lt;div class=&quot;v-a:bl d:t-c&quot;&gt;vertical-align: baseline&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+<div class="f-item-group m-b:7 b-b:black" id="flexbox">
+
+	<div class="m-b:5">
+		<h2
+			class="
+				f:5
+				m-b:0
+				c:green
+			"
+			data-f-toggle="labels"
+		>Flexbox</h2>
+	</div>
+	<div
+		href="#flexbox.00-direction"
+		id="flexbox.00-direction"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#flexbox.00-direction"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Direction</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>Flexbox direction modifiers across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="d:f">
+	<div class="flx-d:c">flex-direction: column</div>
+</div>
+
+<div class="d:f">
+	<div class="flx-d:c-r">flex-direction: column-reverse</div>
+</div>
+
+<div class="d:f">
+	<div class="flx-d:r">flex-direction: row</div>
+</div>
+
+<div class="d:f">
+	<div class="flx-d:r-r">flex-direction: row-reverse</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;flx-d:c&quot;&gt;flex-direction: column&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;flx-d:c-r&quot;&gt;flex-direction: column-reverse&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;flx-d:r&quot;&gt;flex-direction: row&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;flx-d:r-r&quot;&gt;flex-direction: row-reverse&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+	<div
+		href="#flexbox.01-wrap"
+		id="flexbox.01-wrap"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#flexbox.01-wrap"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Wrap</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>Flexbox wrap modifiers across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="d:f">
+	<div class="flx-w:n">flex-wrap: nowrap</div>
+</div>
+
+<div class="d:f">
+	<div class="flx-w:w">flex-wrap: wrap</div>
+</div>
+
+<div class="d:f">
+	<div class="flx-w:w-r">flex-wrap: wrap-reverse</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;flx-w:n&quot;&gt;flex-wrap: nowrap&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;flx-w:w&quot;&gt;flex-wrap: wrap&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;flx-w:w-r&quot;&gt;flex-wrap: wrap-reverse&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+	<div
+		href="#flexbox.02-justify-content"
+		id="flexbox.02-justify-content"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#flexbox.02-justify-content"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Justify Content</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>Flexbox content justification modifiers across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="d:f">
+	<div class="j-c:f-s">justify-content: flex-start</div>
+</div>
+
+<div class="d:f">
+	<div class="j-c:f-e">justify-content: flex-end</div>
+</div>
+
+<div class="d:f">
+	<div class="j-c:c">justify-content: center</div>
+</div>
+
+<div class="d:f">
+	<div class="j-c:s-b">justify-content: space-between</div>
+</div>
+
+<div class="d:f">
+	<div class="j-c:s-a">justify-content: space-around</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;j-c:f-s&quot;&gt;justify-content: flex-start&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;j-c:f-e&quot;&gt;justify-content: flex-end&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;j-c:c&quot;&gt;justify-content: center&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;j-c:s-b&quot;&gt;justify-content: space-between&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;j-c:s-a&quot;&gt;justify-content: space-around&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+	<div
+		href="#flexbox.03-align-items"
+		id="flexbox.03-align-items"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#flexbox.03-align-items"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Align Items</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>Flexbox item alignemnt modifiers across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="d:f">
+	<div class="a-i:f-s">align-items: flex-start</div>
+</div>
+
+<div class="d:f">
+	<div class="a-i:f-e">align-items: flex-end</div>
+</div>
+
+<div class="d:f">
+	<div class="a-i:c">align-items: center</div>
+</div>
+
+<div class="d:f">
+	<div class="a-i:b">align-items: baseline</div>
+</div>
+
+<div class="d:f">
+	<div class="a-i:s">align-items: stretch</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-i:f-s&quot;&gt;align-items: flex-start&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-i:f-e&quot;&gt;align-items: flex-end&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-i:c&quot;&gt;align-items: center&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-i:b&quot;&gt;align-items: baseline&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-i:s&quot;&gt;align-items: stretch&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+	<div
+		href="#flexbox.04-align-content"
+		id="flexbox.04-align-content"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#flexbox.04-align-content"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Align Content</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>Flexbox content alignemnt modifiers across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="d:f">
+	<div class="a-c:f-s">align-content: flex-start</div>
+</div>
+
+<div class="d:f">
+	<div class="a-c:f-e">align-content: flex-end</div>
+</div>
+
+<div class="d:f">
+	<div class="a-c:c">align-content: center</div>
+</div>
+
+<div class="d:f">
+	<div class="a-c:s">align-content: stretch</div>
+</div>
+
+<div class="d:f">
+	<div class="a-c:s-b">align-content: space-between</div>
+</div>
+
+<div class="d:f">
+	<div class="a-c:s-a">align-content: space-around</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-c:f-s&quot;&gt;align-content: flex-start&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-c:f-e&quot;&gt;align-content: flex-end&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-c:c&quot;&gt;align-content: center&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-c:s&quot;&gt;align-content: stretch&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-c:s-b&quot;&gt;align-content: space-between&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-c:s-a&quot;&gt;align-content: space-around&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+	<div
+		href="#flexbox.05-align-self"
+		id="flexbox.05-align-self"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#flexbox.05-align-self"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Align Self</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>Flexbox self alignemnt modifiers across breakpoints</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="d:f">
+	<div class="a-s:f-s">align-self: flex-start</div>
+</div>
+
+<div class="d:f">
+	<div class="a-s:f-e">align-self: flex-end</div>
+</div>
+
+<div class="d:f">
+	<div class="a-s:c">align-self: center</div>
+</div>
+
+<div class="d:f">
+	<div class="a-s:s">align-self: stretch</div>
+</div>
+
+<div class="d:f">
+	<div class="a-s:a">align-self: auto</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-s:f-s&quot;&gt;align-self: flex-start&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-s:f-e&quot;&gt;align-self: flex-end&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-s:c&quot;&gt;align-self: center&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-s:s&quot;&gt;align-self: stretch&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;d:f&quot;&gt;
+	&lt;div class=&quot;a-s:a&quot;&gt;align-self: auto&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+
+</div>
+<div class="f-item-group m-b:7 b-b:black" id="size">
+
+	<div class="m-b:5">
+		<h2
+			class="
+				f:5
+				m-b:0
+				c:green
+			"
+			data-f-toggle="labels"
+		>Size</h2>
+	</div>
+	<div
+		href="#size.00-width"
+		id="size.00-width"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#size.00-width"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Width</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>A set of consistent widths on a 12-col grid with names for each ratio</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="w:1of12">
+	<div class="bg:white.2">
+		width: 1of12
+	</div>
+</div>
+
+<div class="w:1of10">
+	<div class="bg:white.2">
+		width: 1of10
+	</div>
+</div>
+
+<div class="w:1of8">
+	<div class="bg:white.2">
+		width: 1of8
+	</div>
+</div>
+
+<div class="w:2of12">
+	<div class="bg:white.2">
+		width: 2of12
+	</div>
+</div>
+
+<div class="w:1of6">
+	<div class="bg:white.2">
+		width: 1of6
+	</div>
+</div>
+
+<div class="w:1of5">
+	<div class="bg:white.2">
+		width: 1of5
+	</div>
+</div>
+
+<div class="w:2of10">
+	<div class="bg:white.2">
+		width: 2of10
+	</div>
+</div>
+
+<div class="w:1of4">
+	<div class="bg:white.2">
+		width: 1of4
+	</div>
+</div>
+
+<div class="w:2of8">
+	<div class="bg:white.2">
+		width: 2of8
+	</div>
+</div>
+
+<div class="w:3of12">
+	<div class="bg:white.2">
+		width: 3of12
+	</div>
+</div>
+
+<div class="w:3of10">
+	<div class="bg:white.2">
+		width: 3of10
+	</div>
+</div>
+
+<div class="w:1of3">
+	<div class="bg:white.2">
+		width: 1of3
+	</div>
+</div>
+
+<div class="w:2of6">
+	<div class="bg:white.2">
+		width: 2of6
+	</div>
+</div>
+
+<div class="w:4of12">
+	<div class="bg:white.2">
+		width: 4of12
+	</div>
+</div>
+
+<div class="w:3of8">
+	<div class="bg:white.2">
+		width: 3of8
+	</div>
+</div>
+
+<div class="w:2of5">
+	<div class="bg:white.2">
+		width: 2of5
+	</div>
+</div>
+
+<div class="w:4of10">
+	<div class="bg:white.2">
+		width: 4of10
+	</div>
+</div>
+
+<div class="w:5of12">
+	<div class="bg:white.2">
+		width: 5of12
+	</div>
+</div>
+
+<div class="w:1of2">
+	<div class="bg:white.2">
+		width: 1of2
+	</div>
+</div>
+
+<div class="w:2of4">
+	<div class="bg:white.2">
+		width: 2of4
+	</div>
+</div>
+
+<div class="w:3of6">
+	<div class="bg:white.2">
+		width: 3of6
+	</div>
+</div>
+
+<div class="w:4of8">
+	<div class="bg:white.2">
+		width: 4of8
+	</div>
+</div>
+
+<div class="w:5of10">
+	<div class="bg:white.2">
+		width: 5of10
+	</div>
+</div>
+
+<div class="w:6of12">
+	<div class="bg:white.2">
+		width: 6of12
+	</div>
+</div>
+
+<div class="w:7of12">
+	<div class="bg:white.2">
+		width: 7of12
+	</div>
+</div>
+
+<div class="w:3of5">
+	<div class="bg:white.2">
+		width: 3of5
+	</div>
+</div>
+
+<div class="w:6of10">
+	<div class="bg:white.2">
+		width: 6of10
+	</div>
+</div>
+
+<div class="w:5of8">
+	<div class="bg:white.2">
+		width: 5of8
+	</div>
+</div>
+
+<div class="w:2of3">
+	<div class="bg:white.2">
+		width: 2of3
+	</div>
+</div>
+
+<div class="w:4of6">
+	<div class="bg:white.2">
+		width: 4of6
+	</div>
+</div>
+
+<div class="w:8of12">
+	<div class="bg:white.2">
+		width: 8of12
+	</div>
+</div>
+
+<div class="w:7of10">
+	<div class="bg:white.2">
+		width: 7of10
+	</div>
+</div>
+
+<div class="w:3of4">
+	<div class="bg:white.2">
+		width: 3of4
+	</div>
+</div>
+
+<div class="w:6of8">
+	<div class="bg:white.2">
+		width: 6of8
+	</div>
+</div>
+
+<div class="w:9of12">
+	<div class="bg:white.2">
+		width: 9of12
+	</div>
+</div>
+
+<div class="w:4of5">
+	<div class="bg:white.2">
+		width: 4of5
+	</div>
+</div>
+
+<div class="w:8of10">
+	<div class="bg:white.2">
+		width: 8of10
+	</div>
+</div>
+
+<div class="w:5of6">
+	<div class="bg:white.2">
+		width: 5of6
+	</div>
+</div>
+
+<div class="w:10of12">
+	<div class="bg:white.2">
+		width: 10of12
+	</div>
+</div>
+
+<div class="w:7of8">
+	<div class="bg:white.2">
+		width: 7of8
+	</div>
+</div>
+
+<div class="w:9of10">
+	<div class="bg:white.2">
+		width: 9of10
+	</div>
+</div>
+
+<div class="w:11of12">
+	<div class="bg:white.2">
+		width: 11of12
+	</div>
+</div>
+
+<div class="w:full">
+	<div class="bg:white.2">
+		width: full
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;w:1of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 1of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:1of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 1of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:1of8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 1of8
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:2of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 2of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:1of6&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 1of6
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:1of5&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 1of5
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:2of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 2of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:1of4&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 1of4
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:2of8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 2of8
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:3of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 3of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:3of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 3of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:1of3&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 1of3
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:2of6&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 2of6
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:4of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 4of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:3of8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 3of8
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:2of5&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 2of5
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:4of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 4of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:5of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 5of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:1of2&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 1of2
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:2of4&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 2of4
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:3of6&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 3of6
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:4of8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 4of8
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:5of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 5of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:6of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 6of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:7of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 7of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:3of5&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 3of5
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:6of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 6of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:5of8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 5of8
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:2of3&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 2of3
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:4of6&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 4of6
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:8of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 8of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:7of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 7of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:3of4&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 3of4
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:6of8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 6of8
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:9of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 9of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:4of5&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 4of5
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:8of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 8of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:5of6&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 5of6
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:10of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 10of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:7of8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 7of8
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:9of10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 9of10
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:11of12&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: 11of12
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;w:full&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		width: full
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+	<div
+		href="#size.01-height"
+		id="size.01-height"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#size.01-height"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Height</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>A set of consistent heights based on the scale</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="h:0">
+	<div class="bg:white.2 h:full b o:h">
+		height: 0
+	</div>
+</div>
+<div class="h:.1">
+	<div class="bg:white.2 h:full b o:h">
+		height: .1
+	</div>
+</div>
+<div class="h:.2">
+	<div class="bg:white.2 h:full b o:h">
+		height: .2
+	</div>
+</div>
+<div class="h:.3">
+	<div class="bg:white.2 h:full b o:h">
+		height: .3
+	</div>
+</div>
+<div class="h:.4">
+	<div class="bg:white.2 h:full b o:h">
+		height: .4
+	</div>
+</div>
+<div class="h:.5">
+	<div class="bg:white.2 h:full b o:h">
+		height: .5
+	</div>
+</div>
+<div class="h:.6">
+	<div class="bg:white.2 h:full b o:h">
+		height: .6
+	</div>
+</div>
+<div class="h:.7">
+	<div class="bg:white.2 h:full b o:h">
+		height: .7
+	</div>
+</div>
+<div class="h:.8">
+	<div class="bg:white.2 h:full b o:h">
+		height: .8
+	</div>
+</div>
+<div class="h:.9">
+	<div class="bg:white.2 h:full b o:h">
+		height: .9
+	</div>
+</div>
+<div class="h:1">
+	<div class="bg:white.2 h:full b o:h">
+		height: 1
+	</div>
+</div>
+<div class="h:2">
+	<div class="bg:white.2 h:full b o:h">
+		height: 2
+	</div>
+</div>
+<div class="h:3">
+	<div class="bg:white.2 h:full b o:h">
+		height: 3
+	</div>
+</div>
+<div class="h:4">
+	<div class="bg:white.2 h:full b o:h">
+		height: 4
+	</div>
+</div>
+<div class="h:5">
+	<div class="bg:white.2 h:full b o:h">
+		height: 5
+	</div>
+</div>
+<div class="h:6">
+	<div class="bg:white.2 h:full b o:h">
+		height: 6
+	</div>
+</div>
+<div class="h:7">
+	<div class="bg:white.2 h:full b o:h">
+		height: 7
+	</div>
+</div>
+<div class="h:8">
+	<div class="bg:white.2 h:full b o:h">
+		height: 8
+	</div>
+</div>
+<div class="h:9">
+	<div class="bg:white.2 h:full b o:h">
+		height: 9
+	</div>
+</div>
+<div class="h:10">
+	<div class="bg:white.2 h:full b o:h">
+		height: 10
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;h:0&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 0
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.1&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .1
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.2&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .2
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.3&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .3
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.4&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .4
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.5&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .5
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.6&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .6
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.7&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .7
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.8&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .8
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:.9&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: .9
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:1&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 1
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:2&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 2
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:3&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 3
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:4&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 4
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:5&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 5
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:6&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 6
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:7&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 7
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:8&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 8
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:9&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 9
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;h:10&quot;&gt;
+	&lt;div class=&quot;bg:white.2 h:full b o:h&quot;&gt;
+		height: 10
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+	<div
+		href="#size.02-max-width"
+		id="size.02-max-width"
+		class="
+			d:b
+			m-b:7
+			c:black.7
+		"
+	>
+			<div class="m-b:5" data-f-toggle="labels">
+				<a
+					href="#size.02-max-width"
+					class="d:i-b m-b:1"
+				>
+					<h3 class="f:3 c:black.7">Max Width</h3>
+				</a>
+				<div
+					class="
+					"
+				>
+					<button
+						data-f-toggle-control="notes"
+						title="Toggle Notes"
+						class="
+							cur:p
+							d:i-b
+							m-r:.2
+							c:white
+							hover/c:green
+						"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</button>
+					<button
+						class="
+							cur:p
+							d:i-b
+							m-l:.2
+							c:white
+							hover/c:green
+						"
+						data-f-toggle-control="code"
+						title="Toggle Code"
+					>
+						<svg class="h:2 m-w:2">
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		<p>A set of width constraints based on the scale</p>
+
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	<div class="m-w:0">
+	<div class="bg:white.2">
+		max-width: 0
+	</div>
+</div>
+<div class="m-w:.1">
+	<div class="bg:white.2">
+		max-width: .1
+	</div>
+</div>
+<div class="m-w:.2">
+	<div class="bg:white.2">
+		max-width: .2
+	</div>
+</div>
+<div class="m-w:.3">
+	<div class="bg:white.2">
+		max-width: .3
+	</div>
+</div>
+<div class="m-w:.4">
+	<div class="bg:white.2">
+		max-width: .4
+	</div>
+</div>
+<div class="m-w:.5">
+	<div class="bg:white.2">
+		max-width: .5
+	</div>
+</div>
+<div class="m-w:.6">
+	<div class="bg:white.2">
+		max-width: .6
+	</div>
+</div>
+<div class="m-w:.7">
+	<div class="bg:white.2">
+		max-width: .7
+	</div>
+</div>
+<div class="m-w:.8">
+	<div class="bg:white.2">
+		max-width: .8
+	</div>
+</div>
+<div class="m-w:.9">
+	<div class="bg:white.2">
+		max-width: .9
+	</div>
+</div>
+<div class="m-w:1">
+	<div class="bg:white.2">
+		max-width: 1
+	</div>
+</div>
+<div class="m-w:2">
+	<div class="bg:white.2">
+		max-width: 2
+	</div>
+</div>
+<div class="m-w:3">
+	<div class="bg:white.2">
+		max-width: 3
+	</div>
+</div>
+<div class="m-w:4">
+	<div class="bg:white.2">
+		max-width: 4
+	</div>
+</div>
+<div class="m-w:5">
+	<div class="bg:white.2">
+		max-width: 5
+	</div>
+</div>
+<div class="m-w:6">
+	<div class="bg:white.2">
+		max-width: 6
+	</div>
+</div>
+<div class="m-w:7">
+	<div class="bg:white.2">
+		max-width: 7
+	</div>
+</div>
+<div class="m-w:8">
+	<div class="bg:white.2">
+		max-width: 8
+	</div>
+</div>
+<div class="m-w:9">
+	<div class="bg:white.2">
+		max-width: 9
+	</div>
+</div>
+<div class="m-w:10">
+	<div class="bg:white.2">
+		max-width: 10
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class=&quot;m-w:0&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 0
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.1&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .1
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.2&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .2
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.3&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .3
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.4&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .4
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.5&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .5
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.6&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .6
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.7&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .7
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .8
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:.9&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: .9
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:1&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 1
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:2&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 2
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:3&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 3
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:4&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 4
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:5&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 5
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:6&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 6
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:7&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 7
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:8&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 8
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:9&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 9
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-w:10&quot;&gt;
+	&lt;div class=&quot;bg:white.2&quot;&gt;
+		max-width: 10
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
+
+</div>
+
+
+
+
+			</div>
+		<script src="/assets/fabricator/scripts/f.js"></script>
+
+		<!-- toolkit scripts -->
+		<script src="https://use.typekit.net/clh6zkd.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<script src="/assets/toolkit/scripts/toolkit.js"></script>
+		<!-- /toolkit scripts -->
+	</body>
+</html>
