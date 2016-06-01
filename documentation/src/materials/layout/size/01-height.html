@@ -1,0 +1,12 @@
+---
+notes: |
+  A set of consistent heights based on the scale
+---
+
+{{#each toolkit.scale}}
+	<div class="h:{{this}}">
+		<div class="bg:white.2 h:full b o:h">
+			height: {{this}}
+		</div>
+	</div>
+{{/each}}

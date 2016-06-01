@@ -1,0 +1,25 @@
+{{#if notes}}
+	<div class="
+			f-item-notes
+			c:white
+			m-b:1
+		"
+		data-f-toggle="notes"
+	>
+		{{{notes}}}
+	</div>
+{{/if}}
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:black.1
+		c:black.9
+	"
+>
+	{{{material @key @root}}}
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">{{material @key @root}}</code></pre>
+</div>
