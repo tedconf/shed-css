@@ -28,7 +28,7 @@
 					}
 
 					.c\:#{$label}\.#{$i} {
-color: transparentize($color, ($i / 10));
+						color: transparentize($color, ($i / 10));
 					}
 
 					.hover\/bg\:#{$label}\.#{$i}:hover {
