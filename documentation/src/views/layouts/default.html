@@ -18,11 +18,11 @@
 		<title>{{title}}</title>
 
 		{{#if fabricator}}
-			<link rel="stylesheet" href="{{baseurl}}/assets/fabricator/styles/f.css">
+			<link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/fabricator/styles/f.css">
 		{{/if}}
 
 		<!-- toolkit styles -->
-		<link rel="stylesheet" href="{{baseurl}}/assets/toolkit/styles/toolkit.css">
+		<link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/styles/toolkit.css">
 		<!-- /toolkit styles -->
 	</head>
 
@@ -39,13 +39,13 @@
 
 		{{#if fabricator}}
 			</div>
-		<script src="{{baseurl}}/assets/fabricator/scripts/f.js"></script>
+		<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/fabricator/scripts/f.js"></script>
 		{{/if}}
 
 		<!-- toolkit scripts -->
 		<script src="https://use.typekit.net/clh6zkd.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
-		<script src="{{baseurl}}/assets/toolkit/scripts/toolkit.js"></script>
+		<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/scripts/toolkit.js"></script>
 		<!-- /toolkit scripts -->
 	</body>
 </html>
