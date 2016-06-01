@@ -1,0 +1,16 @@
+---
+notes: |
+  utilities for adjusting border radius across breakpoints
+---
+
+{{#each toolkit.scale}}
+<div class="m-b:1">
+	<div
+		class="
+			b-r:{{this}}
+			h:10
+			bg:white.2
+		"
+		>border-radius: {{this}}</div>
+</div>
+{{/each}}

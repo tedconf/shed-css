@@ -1,0 +1,9 @@
+---
+notes: |
+  Font sizes across breakpoints. Since this is likely the most common
+  font attribute you will use, it's shortened to simply `f`
+---
+
+{{#each toolkit.scale}}
+  <div class="f:{{this}}">font-size {{this}}{{#equal this "1"}} base size{{/equal}}</div>
+{{/each}}

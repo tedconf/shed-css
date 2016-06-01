@@ -1,0 +1,16 @@
+---
+notes: |
+  utilities for positioning according to the left, across breakpoints
+---
+
+{{#each toolkit.scale}}
+	<div class="p:2 h:10 pos:r b m-b:1">
+		<div class="left:{{this}} pos:a b:white">left: {{this}}</div>
+	</div>
+{{/each}}
+
+{{#each toolkit.scale}}
+	<div class="p:2 h:10 pos:r b m-b:1">
+		<div class="left:-{{this}} pos:a b:white">left: -{{this}}</div>
+	</div>
+{{/each}}

@@ -1,0 +1,12 @@
+---
+notes: |
+  A set of width constraints based on the scale
+---
+
+{{#each toolkit.scale}}
+	<div class="m-w:{{this}}">
+		<div class="bg:white.2">
+			max-width: {{this}}
+		</div>
+	</div>
+{{/each}}
