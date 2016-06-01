@@ -24,7 +24,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "dev:docs": "gulp --cwd docs/ --dev",
     "build:docs": "gulp --cwd docs/",
-    "push_pages": "npm run build:docs && git add . && git commit -m 'update docs' && git subtree push --prefix docs/dist origin gh-pages"
+    "push_pages": "npm run build:docs && git add . && git commit -m 'update docs' && git push origin `git subtree push --prefix docs/dist origin gh-pages`:gh-pages --force"
   },
   "keywords": [
     "css",
