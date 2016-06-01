@@ -1,5 +1,7 @@
 # Shed
 
+[Documentation](http://tedconf.github.io/shed-css/)
+
 Shed is a collection of functional CSS utilities aiming to save you the trouble of writing CSS.
 
 ## Setup
