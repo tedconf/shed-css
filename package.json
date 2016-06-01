@@ -22,9 +22,9 @@
     "build": "run-p build:css:lib build:css:dist",
     "prepublish": "run-s build",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "dev:docs": "gulp --cwd docs/ --dev",
-    "build:docs": "gulp --cwd docs/",
-    "push_pages": "npm run build:docs && git add . && git commit -m 'update docs' && git push origin `git subtree push --prefix docs/dist origin gh-pages`:gh-pages --force"
+    "dev:docs": "gulp --cwd documentation/ --dev",
+    "build:docs": "gulp --cwd documentation/",
+    "push_pages": "npm run build:docs && gh-pages -d documentation/dist -b gh-pages"
   },
   "keywords": [
     "css",
@@ -46,6 +46,7 @@
     "cssnano": "3.5.2",
     "del": "^2",
     "fabricator-assemble": "^1.1.10",
+    "gh-pages": "0.11.0",
     "gulp": "^3",
     "gulp-autoprefixer": "^3",
     "gulp-csso": "^1",
