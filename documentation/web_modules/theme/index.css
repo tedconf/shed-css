@@ -158,7 +158,7 @@ ul, ol {
 }
 
 
-@each $color in purple, blue-d, green, yellow, blue-l, white, black {
+@each $color in blue, white, black {
 	.b\:$(color) {
 		border: 1px solid var(--$(color));
 	}
@@ -210,7 +210,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
 	-webkit-box-shadow: 0;
-	background: var(--blue-d);
+	background: var(--blue);
 }
 
 body::-webkit-scrollbar-thumb {
