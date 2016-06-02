@@ -1,4 +1,4 @@
-<div class="f-item-group m-b:7 b-b:black" id="{{@key}}">
+<div class="f-item-group m-b:7 b-b" id="{{@key}}">
 
 {{#if items}}
 	<div class="m-b:5">
@@ -6,7 +6,6 @@
 			class="
 				f:5
 				m-b:0
-				c:green
 			"
 			data-f-toggle="labels"
 		>{{name}}</h2>
@@ -18,15 +17,17 @@
 		class="
 			d:b
 			m-b:7
-			c:black.7
 		"
 	>
 			<div class="m-b:5" data-f-toggle="labels">
 				<a
 					href="#{{@key}}"
-					class="d:i-b m-b:1"
+					class="
+						d:i-b
+						m-b:1
+					"
 				>
-					<h3 class="f:3 c:black.7">{{name}}</h3>
+					<h3 class="f:3 c:blue">{{name}}</h3>
 				</a>
 				{{> f-item-controls}}
 			</div>{{> f-item-content this}}
@@ -34,7 +35,7 @@
 	{{/each}}
 {{else}}
 	<div class="m-b:5" data-f-toggle="labels">
-		<h2 class="f:5 m-b:.5 c:green">{{name}}</h2>
+		<h2 class="f:5 m-b:.5">{{name}}</h2>
 		{{> f-item-controls}}
 	</div>{{> f-item-content this}}
 {{/if}}

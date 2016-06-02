@@ -1,11 +1,7 @@
 :root {
 	--white: #ffffff;
 	--black: #000000;
-	--purple: #942eec;
-	--blue-d: #4439b2;
-	--green: #c4da41;
-	--yellow: #f6e240;
-	--blue-l: color(#2cb0df tint(30%));
+	--blue: #0F1A64;
 
 	--ms-ratio: var(--minor-third);
 	--mqs: n, xs, sm ,md, lg, xl;
@@ -67,7 +63,7 @@
 }
 
 .link {
-	color: var(--blue-l);
+	color: var(--black);
 	text-decoration: underline;
 }
 
@@ -78,7 +74,7 @@ ul, ol {
 	padding-left: 0;
 }
 
-@each $color in purple, blue-d, green, yellow, blue-l, white, black {
+@each $color in blue, white, black {
 	.c\:$color {
 		color: var(--$color);
 	}
@@ -218,7 +214,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: var(--green);
+	background-color: color(var(--white) a(80%));
 }
 
 .m-w\:m {

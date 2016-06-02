@@ -9,14 +9,14 @@
 		width: percentage(1/3);
 		margin: 0;
 		padding: 1rem 0;
-		box-shadow: inset 0 0.25rem 0 0 transparentize(map-get($theme-colors, green), 1);
+		box-shadow: inset 0 0.25rem 0 0 transparentize(map-get($theme-colors, white), 1);
 		transition: box-shadow .15s ease-out;
 
 		&.f-active {
-			box-shadow: inset 0 0.25rem 0 0 map-get($theme-colors, green);
+			box-shadow: inset 0 0.25rem 0 0 map-get($theme-colors, white);
 
 			use {
-				fill: map-get($theme-colors, green);
+				fill: map-get($theme-colors, white);
 			}
 		}
 

@@ -18,13 +18,13 @@
 
 	a {
 		transition: padding .1s ease-out, box-shadow .3s ease-out;
-		box-shadow: inset 0.25rem 0 0 0 transparentize(map-get($theme-colors, green), 1);
+		box-shadow: inset 0.25rem 0 0 0 transparentize(map-get($theme-colors, white), 1);
 		&:hover {
 			text-decoration: underline;
 		}
 
 		&.f-active {
-			box-shadow: inset 0.25rem 0 0 0 map-get($theme-colors, green);
+			box-shadow: inset 0.25rem 0 0 0 map-get($theme-colors, white);
 			text-transform: uppercase;
 			font-weight: bold;
 			color: map-get($theme-colors, green);
