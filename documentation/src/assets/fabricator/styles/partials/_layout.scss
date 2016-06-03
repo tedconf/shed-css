@@ -37,7 +37,6 @@ body {
 		transform: translate($menu-width, 0);
 
 		@media (min-width: 60em) {
-			margin-left: $menu-width;
 			transform: translate(0, 0);
 		}
 	}

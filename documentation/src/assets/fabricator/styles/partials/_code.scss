@@ -1,173 +1,197 @@
-pre[class*="language-"]{
-	font-family: monospace;
-	direction: ltr;
-	tab-size: 2;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5;
-	background-color: #272822;
-	color: white;
-	border-radius: .25rem;
-	overflow-x: scroll;
-	padding: .75rem 1rem;
+/**
+ * Prism base code highlighter theme using Sass
+ *
+ * @author @MoOx
+ */
 
+// prism selector
+$code-selector: "code[class*=\"language-\"], pre[class*=\"language-\"]";
+$code-selector-block: "pre[class*=\"language-\"]";
+$code-selector-inline: ":not(pre) > code[class*=\"language-\"]";
+
+// generic stuff
+$code-font-family: 		letter-gothic-std, monospace	!default;
+$code-font-size: 			16px !default;
+$code-line-height:		1.5 !default;
+
+$code-tab-size: 		2		!default;
+$code-hyphens: 			none	!default;
+
+$code-block-padding: 	1rem	!default;
+$code-inline-padding: 	6px	!default;
+$code-border-radius: 	0 		!default;
+
+$code-border: 			0 	!default;
+$code-background: 		map-get($theme-colors, blue) 			!default;
+$code-color: 			transparentize(map-get($theme-colors, white), .25) 				!default;
+$code-color-fade:		none 			!default;
+$code-text-shadow: 		0 		!default;
+$code-box-shadow: 		0 !default;
+
+// $code-linenums-padding:		7px !default;
+// $code-linenums-width: 			40px !default;
+// $code-linenums-background:		#444 !default;
+// $code-linenums-border-color:	#555 !default;
+// $code-linenums-border-width:	1px !default;
+
+@if $code-selector != null {
+	#{$code-selector} {
+		-moz-tab-size: $code-tab-size;
+		-o-tab-size: $code-tab-size;
+		tab-size: $code-tab-size;
+
+		-webkit-hyphens: $code-hyphens;
+		-moz-hyphens: $code-hyphens;
+		-ms-hyphens: $code-hyphens;
+		hyphens: $code-hyphens;
+
+		// whitespace management
+		white-space: pre; // fallback
+	 	white-space: pre-wrap;
+		word-break: break-all;
+		word-wrap: break-word;
+
+		font-family: $code-font-family;
+		font-size: 	$code-font-size;
+		line-height: $code-line-height;
+
+		color: $code-color;
+		text-shadow: $code-text-shadow;
+		background: $code-background;
+	}
 }
-.token.comment{
-	color: slategray;
 
+%code-background {
+	border-radius: $code-border-radius;
+	border: $code-border;
+	box-shadow: $code-box-shadow;
 }
-.token.prolog{
-	color: slategray;
 
+@if $code-selector-block != null {
+	#{$code-selector-block} {
+		@extend %code-background;
+		padding: $code-block-padding;
+	}
 }
-.token.doctype{
-	color: slategray;
 
+@if $code-selector-inline != null {
+	#{$code-selector-inline} {
+		@extend %code-background;
+		padding: $code-inline-padding;
+	}
 }
-.token.cdata{
-	color: slategray;
 
-}
-.token.tag{
-	color: #f92672;
+// pre[class*="language-"],
+// :not(pre) > code[class*="language-"] {
+// 	background: $code-background;
+// }
 
-}
-.token.entity{
-	color: #f8f8f2;
+// prism tokens
+//
+$code-color-comment:		transparentize(map-get($theme-colors, white), .5) !default;
+$code-color-keyword:		map-get($theme-colors, white)	!default;
+$code-color-value:			transparentize(map-get($theme-colors, white), .25)	!default;
+$code-color-string:			transparentize(map-get($theme-colors, white), .25)	!default;
+$code-color-name:			null	!default;
+$code-color-number:			null	!default;
+$code-color-variable:		null	!default;
+$code-color-selector:		map-get($theme-colors, white)	!default;
+$code-color-punctuation:	$code-color-fade	!default;
 
-}
-.token.atrule{
-	color: #e6db74;
+#{$code-selector} {
+	.namespace {
+		opacity: .7;
+	}
 
-}
-.token.url{
-	color: #f8f8f2;
+	.token {
+		&.comment,
+		&.prolog,
+		&.doctype,
+		&.cdata {
+			color: $code-color-comment;
+		}
 
-}
-.token.selector{
-	color: #a6e22e;
+		&.null,
+		&.operator,
+		&.boolean,
+		&.number {
+			color: $code-color-number;
+		}
 
-}
-.language-css .token.string{
-	color: #f8f8f2;
+		&.attr-name,
+		&.string {
+			color: $code-color-string;
+		}
 
-}
-.token.string{
-	color: #a6e22e;
+		&.entity,
+		&.url,
+		.language-css &.string,
+		.style &.string {
+			color: $code-color-string;
+		}
 
-}
-.token.property{
-	color: #f92672;
+		&.selector {
+			color: $code-color-selector;
+		}
 
-}
-.token.important{
-	color: #fd971f;
-	font-weight: bold;
+		&.atrule,
+		&.attr-value,
+		&.keyword,
+		&.control,
+		&.directive,
+		&.important,
+		&.unit {
+			color: $code-color-keyword;
+		}
 
-}
-.token.punctuation{
-	color: #f8f8f2;
+		&.regex,
+		&.statement {
+			color: $code-color-value;
+		}
 
-}
-.token.number{
-	color: #ae81ff;
+		&.placeholder,
+		&.variable {
+			color: $code-color-variable;
+		}
 
-}
-.token.keyword{
-	color: #66d9ef;
+		&.property,
+		&.tag {
+			font-style: italic;
+		}
 
-}
-.token.boolean{
-	color: #ae81ff;
+		&.important,
+		&.statement {
+			font-weight: bold;
+		}
 
-}
-.token.operator{
-	color: #f8f8f2;
+		// todo ?
+		// &.mixin
+		// &.gradient
+		// &.abslength
+		// &.easing
+		// &.time
+		// &.angle
+		// &.fontfamily
 
-}
-.token.char{
-	color: #a6e22e;
+		// ruby/vim https://github.com/LeaVerou/prism/pull/18
+		// &.inst-var
+		// &.builtin
+		// &.const
+		// &.symbol
+		//
+		// php https://github.com/LeaVerou/prism/pull/20
+		// &.deliminator
+		// &.function
 
-}
-.token.regex{
-	color: #fd971f;
+		&.punctuation {
+			color: $code-color-punctuation;
+		}
 
-}
-.token.variable{
-	color: #f8f8f2;
+		&.entity {
+			cursor: help;
+		}
 
-}
-.token.constant{
-	color: #f92672;
-
-}
-.token.symbol{
-	color: #f92672;
-
-}
-.token.builtin{
-	color: #a6e22e;
-
-}
-.token.attr-value{
-	color: #e6db74;
-
-}
-.token.deleted{
-	color: #f92672;
-
-}
-.token.inserted{
-	color: #a6e22e;
-
-}
-.token.namespace{
-	opacity: 0.7;
-
-}
-.token.bold{
-	font-weight: bold;
-
-}
-.token.italic{
-	font-style: italic;
-
-}
-.language-markup .token{
-	color: rgba(235,228,190,1);
-
-}
-.language-markup .token.comment{
-	color: rgba(95,95,167,1);
-
-}
-.language-markup .token.doctype{
-	color: rgba(95,93,145,1);
-
-}
-.language-markup .token.tag{
-	color: rgba(255,135,215,1);
-
-}
-.language-markup .token.tag .tag .punctuation{
-	color: rgba(96,250,136,1);
-
-}
-.language-markup .token.tag .punctuation{
-	color: rgba(96,250,136,1);
-
-}
-.language-markup .token.tag .attr-value{
-	color: rgba(255,240,105,1);
-
-}
-.language-markup .token.tag .attr-name{
-	color: rgba(235,235,235,1);
-
-}
-.language-markup .token.entity{
-	color: rgba(255,255,255,1);
-
+		// for dev :)
+		&.debug { color: red }
+	}
 }

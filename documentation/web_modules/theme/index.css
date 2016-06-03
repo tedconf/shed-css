@@ -224,3 +224,32 @@ body::-webkit-scrollbar-thumb {
 pre, code {
 	font-size: 16px;
 }
+
+.content {
+	@nest & h1, h2, h3, h4, h5, h6 {
+		margin-bottom: var(--z1);
+		margin-top: var(--z1);
+	}
+	@nest & a {
+		color: var(--black);
+		text-decoration: underline;
+	}
+	@nest & ul {
+		list-style-type: square;
+		padding-left: var(--z3);
+		margin-bottom: var(--z5);
+		@nest & > li {
+			margin-bottom: var(--z1);
+		}
+	}
+	@nest & p {
+		margin-bottom: var(--z2);
+	}
+	@nest & code:not([class*="language"]) {
+		background-color: var(--blue);
+		color: var(--white);
+		padding-left: var(--z-dot3);
+		padding-right: var(--z-dot3);
+		border-radius: var(--z-dot1);
+	}
+}

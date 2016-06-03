@@ -1,7 +1,8 @@
+code[class*="language-"],
 pre[class*="language-"]{
 	font-family: monospace;
 	direction: ltr;
-	tab-size: 2;
+	tab-size: 2 !important;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
