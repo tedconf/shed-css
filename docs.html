@@ -421,48 +421,90 @@ $my_breakpoints: (
 @custom-media --mq-lg (min-width: 48em);
 @custom-media --mq-xl (min-width: 54em);
 
-@each $color in black, gray-dd, gray-d, gray, gray-l, gray-ll, white, red, black-g, gray-d-g {
-    .c\:$color {
-        color: var(--$color);
-    }
-    
-    .bg\:$color,
-    .bg-c\:$color {
-        background: var(--$color);
-
-    }
-    
-    .hover\/c\:$color:hover {
-        color: var(--$color);
-    }
-    
-    .hover\/bg\:$color:hover,
-    .hover\/bg-c\:$color:hover {
-        background: var(--$color);
-    }
-    
-    @each $mq in xs, sm, md, lg, xl {
-        @media(--mq-$mq) {
-            .c\:$color\@$mq {
+@each $mq in n, xs, sm, md, lg, xl {
+    @if $mq == n {
+        @each $color in black, gray-dd, gray-d, gray, gray-l, gray-ll, white, red, black-g, gray-d-g {
+            .c\:$color {
                 color: var(--$color);
             }
-            
+
             .bg\:$color,
-            .bg-c\:$color\@$mq {
+            .bg-c\:$color {
                 background: var(--$color);
+
             }
-            
-            .hover\/c\:$color\@$mq:hover {
+
+            .hover\/c\:$color:hover {
                 color: var(--$color);
             }
 
-            .hover\/bg\:$color\@$mq:hover,
-            .hover\/bg-c\:$color\@$mq:hover {
+            .hover\/bg\:$color:hover,
+            .hover\/bg-c\:$color:hover {
                 background: var(--$color);
+            }
+
+            @for $i from 1 to 9 {
+                .bg\:$color\.$i {
+                    background-color: color(var(--$color) alpha(calc($i / 10)));
+                }
+
+                .c\:$color\.$i {
+                    color: color(var(--$color) alpha(calc($i / 10)));
+                }
+
+                .hover\/bg\:$color\.$i:hover {
+                    background-color: color(var(--$color) alpha(calc($i / 10)));
+                }
+
+                .hover\/c\:$color\.$i:hover {
+                    color: color(var(--$color) alpha(calc($i / 10)));
+                }
+            }
+        }
+    }
+    @else {
+        @media(--mq-$mq) {
+            @each $color in black, gray-dd, gray-d, gray, gray-l, gray-ll, white, red, black-g, gray-d-g {
+                .c\:$color\@$mq {
+                    color: var(--$color);
+                }
+
+                .bg\:$color\@$mq,
+                .bg-c\:$color\@$mq {
+                    background: var(--$color);
+                }
+
+                .hover\/c\:$color\@$mq:hover {
+                    color: var(--$color);
+                }
+
+                .hover\/bg\:$color\@$mq:hover,
+                .hover\/bg-c\:$color\@$mq:hover {
+                    background: var(--$color);
+                }
+
+                @for $i from 1 to 9 {
+                    .bg\:$color\.$i\@$mq {
+                        background-color: color(var(--$color) alpha(calc($i / 10)));
+                    }
+
+                    .c\:$color\.$i\@$mq {
+                        color: color(var(--$color) alpha(calc($i / 10)));
+                    }
+
+                    .hover\/bg\:$color\.$i\@$mq:hover {
+                        background-color: color(var(--$color) alpha(calc($i / 10)));
+                    }
+
+                    .hover\/c\:$color\.$i\@$mq:hover {
+                        color: color(var(--$color) alpha(calc($i / 10)));
+                    }
+                }
             }
         }
     }
 }
+
 </code></pre>
 
 </div>
@@ -606,6 +648,11 @@ some actions in css that can't be avoided. We handle them with the
 supported on hover.</li>
 </ul>
 <p>Once you get moving, these shorthands should feel natural.</p>
+<h3>Responsive Web Design</h3>
+<p>What about RWD? shed was build with a mobile-first approach in mind.</p>
+<div class="c:white bg:black bg:blue@sm">
+    black, then blue at medium
+</div>
 
 </div>
 
