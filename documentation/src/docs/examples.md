@@ -69,6 +69,6 @@ Once you get moving, these shorthands should feel natural.
 
 What about RWD? shed was build with a mobile-first approach in mind.
 
-<div class="c:white bg:black bg:blue@sm">
-	black, then blue at medium
+<div class="c:white bg:black bg:blue@sm bg:blue.5@md">
+	black, then blue at small, then blue.5 at md
 </div>
