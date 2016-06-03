@@ -65,3 +65,6 @@ this release accidentally commented imports out.
 
 # 0.7.3 - 05/31/2016
 - fix typo on baseline alignment
+
+# 1.0.0-rc.1 - 06/03/2016
+- Add documentation 😹 
