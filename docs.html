@@ -234,10 +234,27 @@
 			
 			
 					<li>
-						<a href="docs.html" class="f-menu__heading">Docs</a>
+						<a
+							href="docs.html"
+							class="
+								f-menu__heading
+								f-w:700
+								f:2
+								t-t:u
+								c:white
+								b-b
+								d:i-b
+								m-b:.7
+							"
+						>
+							Docs
+						</a>
 						<ul>
 							<li>
 								<a href="docs.html#custom-theme">Custom Theme</a>
+							</li>
+							<li>
+								<a href="docs.html#essential-concepts">Essential Concepts</a>
 							</li>
 						</ul>
 					</li>
@@ -249,7 +266,7 @@
 				</ul>
 			</div>
 			<!-- /fabricator menu -->
-			<div class="f-container">
+			<div class="f-container m-w:m m-x:a">
 				<div class="f-control-bar">
 					<button class="f-menu-toggle w:full m-w:5 h:5">
 						<svg class="c:blue hover/c:blue.7 w:full h:full">
@@ -261,7 +278,7 @@
 		
 <h1 data-f-toggle="labels">Docs</h1>
 
-<div class="f-item-group">
+<div class="f-item-group content">
 	<h2 class="m-b:1 c:blue t-t:u" id="custom-theme"><a href="#custom-theme">Custom Theme</a></h2>
 	<p class="m-b:3">To generate a set of colors in the shed style, you can use these conveniences, which may be added to core:</p>
 <h3>SCSS</h3>
@@ -446,8 +463,145 @@ $my_breakpoints: (
 </code></pre>
 
 </div>
+<div class="f-item-group content">
+	<h2 class="m-b:1 c:blue t-t:u" id="essential-concepts"><a href="#essential-concepts">Essential Concepts</a></h2>
+	<h2>Goal</h2>
+<p>To eliminate distraction for developers and designers by creating a set of
+options rather than encouraging <a href="https://en.wikipedia.org/w/index.php?title=Bikeshedding&amp;redirect=no">bikeshedding</a>, where shed gets its name.</p>
+<h2>Tactics</h2>
+<ul>
+<li>provide predictable single-purpose classes to use as building blocks</li>
+<li>encourage the composition of classes to absolve developers from authoring css
+and thereby creating abstraction</li>
+<li>establish consistency by providing sizes for properties based on a scale</li>
+</ul>
+<h3>Focus</h3>
+<p>When classes serve a single purpose, the cascade becomes a non-issue. If I use
+the class <code>bg:black</code>, I can count on it only doing one thing - making the
+backgorund for this element black. Future developers can also count on that.</p>
+<p>This is the core idea that makes atomic/functional css work. Classes are
+&quot;immutable&quot; and you can get the same output every time. They're predictable and
+reliable.</p>
+<h3>Composability</h3>
+<p>Because classes have a single purpose and you can count on them, they're easier
+to use together. I can easily put <code>bg:black c:white</code> and be assured that they
+won't conflict. I can also add <code>p:1</code> and know that I'm not going to impact
+color or background color by adding padding.</p>
+<h3>Scale</h3>
+<p>Choosing sizes has been a never-ending battle. 12px? 13.333px? 14.5px? 15px? and so on. Shed solves this problem by using a <a href="http://www.modularscale.com/?1&amp;rem&amp;1.2&amp;web&amp;text">modular scale</a> to resolve these conflicts. Shed provides a root size (1rem, don't hijack the browser default) and 10 steps above and below it. These apply to font size, padding, margin, height, max-width, positioning, border-radius, etc. This removes the need to dwell on sizes and also makes it easy to combine properties in a meaningful ways. For example (<em>decoration added for clarity</em>):</p>
+<div class="pos:r h:10 bg:blue.5 m-y:4">
+    <div
+        class="
+            pos:a
+            c:white
+            bg:blue
+            p:.5
+            t-t:u
+            top:-.5
+            left:-.5
+            right:.5
+        "
+    >
+        I should be aligned w/ my parent, but my background outside of it on the
+        top and left, and inside on the right.
+    </div>
+</div>
+<pre><code class="language-html">&lt;div class=&quot;pos:r&quot;&gt;
+  &lt;div
+    class=&quot;
+      pos:a
+      p:.5
+      top:-.5
+      left:-.5
+    &quot;
+  &gt;
+    I should be aligned w/ my parent, but my background outside of it on the top and left.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>DRYness</h3>
+<p>That's great, but I wouldn't want to combine a load of classes every time
+I need a button. shed suggests solving this problem by moving all of your
+design language to the template layer. The reasons are multiple:</p>
+<ul>
+<li>
+<p>When you create a new UI component, you're creating an abstraction, and abstractions are hard. You represent an idea through design and interaction. When you couple this with many common approaches to CSS architecture, you can exacerbate the problem by no only reusing that abstraction in CSS, but by coupling it with additional abstractions (commonly called patterns or objects) like the media object, breadcrumbs, block-list, etc. Now you have multiple requirements on the markup that are associated with multiple abstractions. Having so many moving and dependant abstractions becomes confusing and overwhelming.</p>
+</li>
+<li>
+<p>Because a special abstraction is created for every UI component, modifying
+them often involves extending that abstraction again. Now you have your
+primary abstraction, css-only pattern abstractions, and modifier
+abstractions. And you have to name all of these!</p>
+</li>
+</ul>
+<p>How does it actually work? Let's start with a simple example:</p>
+<div>
+  <button
+    class="
+      d:i-b
+      f-w:500
+      p-x:3
+      p-y:.7
+      b-r:.4
+      f:2
+      c:white
+      bg:blue
+      t-t:u
+      hover/bg:blue.9
+    "
+  >
+  Log In
+  </button>
+</div>
+<pre><code class="language-html">&lt;button
+  class=&quot;
+    d:i-b
+    f-w:700
+    p-x:3
+    p-y:.7
+    b-r:.4
+    f:2
+    c:white
+    bg:blue
+    t-t:u
+    hover/bg:blue.9
+  &quot;
+&gt;
+  Log In
+&lt;/button&gt;
+</code></pre>
+<h4>The Classes</h4>
+<p>While this can be overwhelming at first glance, there is a simple set of rules
+at play. Let's break down this button into it's pieces:</p>
+<ul>
+<li><code>d:i-b</code>: this is simply <code>display: inline-block</code>. There are <a href="layout.html#00-display">utilities for each
+display type</a>.</li>
+<li><code>f-w:700</code>: this equates to <code>font-weight: 700</code>. <a href="type.html#01-font-weight">Font weights are available
+from 100 - 900</a>. Number values <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Values">map to named
+values</a>,
+so this is &quot;bold&quot;.</li>
+<li><code>p-x:3</code> equates to <code>padding-left: var(--z3); padding-right: var(--z3);</code>. “x”
+is used to specify both, like the the css property <code>overflow-x</code>.</li>
+<li><code>p-y:.7</code> equates to <code>padding-top: var(--z-dot7); padding-bottom: var(--z-dot7)</code>. The &quot;.7&quot; means it's 3 steps down from the root on the scale, whereas a plain old &quot;7&quot; means it's seven steps up!</li>
+<li><code>b-r:.4</code> means <code>border-radius: var(--z-dot4)</code>.</li>
+<li><code>f:2</code>: Since one of the most common things you'll do with fonts is change
+their size, <code>f</code> does just that. This class sets <code>font-size: var(--z2)</code>.</li>
+<li><code>c:white</code>: you should be able to guess this one. It was generated from our
+<a href="docs.html#custom-theme">theme</a>. It sets <code>color: var(--white)</code>.</li>
+<li><code>bg:blue</code> similarly sets <code>background-color: var(--blue)</code>.</li>
+<li><code>t-t:u</code>: Staying with our pattern of mapping to css properties, this sets
+<code>text-transform: uppercase;</code>.</li>
+<li><code>hover/bg:blue.9</code>: While shed tries to remain entirely stateless, there are
+some actions in css that can't be avoided. We handle them with the
+<code>&lt;action&gt;/class</code> syntax, currently only color and background color are
+supported on hover.</li>
+</ul>
+<p>Once you get moving, these shorthands should feel natural.</p>
+
+</div>
 
 
+			</div>
 
 		<div class="pos:f right:0 top:0">
 			<a
@@ -467,7 +621,6 @@ $my_breakpoints: (
 				<svg class="w:full" aria-hidden="true" fill="currentColor" version="1.1" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z">GH</path></svg>
 			</a>
 		</div>
-			</div>
 		<script src="assets/fabricator/scripts/f.js"></script>
 
 		<!-- toolkit scripts -->
