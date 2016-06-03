@@ -64,3 +64,11 @@ at play. Let's break down this button into it's pieces:
   supported on hover.
 
 Once you get moving, these shorthands should feel natural.
+
+### Responsive Web Design
+
+What about RWD? shed was build with a mobile-first approach in mind.
+
+<div class="c:white bg:black bg:blue@sm">
+	black, then blue at medium
+</div>
