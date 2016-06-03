@@ -34,7 +34,7 @@
     "utility classes"
   ],
   "author": "Vince Speelman",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6",
     "babel-loader": "^6",
