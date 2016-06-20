@@ -8,6 +8,10 @@
 							$(prop)-left: auto;
 							$(prop)-right: auto;
 						}
+						.$(short)-$(dir-short)\:r {
+							$(prop)-left: calc(-50vw + 50%);
+							$(prop)-right: calc(-50vw + 50%);
+						}
 					} @else if $(dir) == y {
 						.$(short)-$(dir-short)\:a {
 							$(prop)-top: auto;
