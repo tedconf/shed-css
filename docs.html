@@ -259,6 +259,9 @@
 							<li>
 								<a href="docs.html#examples">Examples</a>
 							</li>
+							<li>
+								<a href="docs.html#frequently-asked-questions">Frequently Asked Questions</a>
+							</li>
 						</ul>
 					</li>
 			
@@ -653,6 +656,34 @@ supported on hover.</li>
 <div class="c:white bg:black bg:blue@sm bg:blue.5@md">
     black, then blue at small, then blue.5 at md
 </div>
+
+</div>
+<div class="f-item-group content">
+	<h2 class="m-b:1 c:blue t-t:u" id="frequently-asked-questions"><a href="#frequently-asked-questions">Frequently Asked Questions</a></h2>
+	<h2>Is this valid CSS?</h2>
+<p>While it may be unusual to use some of these characters, it is not invalid. As
+I understand <a href="https://www.w3.org/TR/CSS21/syndata.html#characters">section 4.1.3 of the CSS 2.1 spec on characters and case</a>:</p>
+<blockquote>
+<p>“Identifiers can also contain escaped characters and any ISO 10646 character
+as a numeric code (see next item). For instance, the identifier &quot;B&amp;W?&quot; may be
+written as &quot;B&amp;W?&quot; or &quot;B\26 W\3F&quot;.”</p>
+</blockquote>
+<h2>Is this a new thought?</h2>
+<p>I haven't seen classnames formatted in this way before, but many of the ideas
+inside of shed.css were inspired by <a href="http://tachyons.io/">tachyons</a>,
+<a href="http://www.basscss.com/">Basscss</a>, <a href="http://alistapart.com/article/more-meaningful-typography">More Meaningful
+Typography</a>, <a href="http://csswizardry.com/2016/05/the-importance-of-important/">Forcing
+Immutability in
+CSS</a>, <a href="http://www.jon.gold/2015/07/functional-css/">Functional
+Programming, CSS, and your
+sanity</a>, <a href="http://acss.io/">Atomic
+CSS</a>, and many conversations and bikeshedding sessions.</p>
+<h2>What does the CSS look like?</h2>
+<p>When writing class names that have weird characters in them, they must be
+escaped with a backslash (<code>\</code>). That means something like <code>f:10</code> has to be
+authored (in the stylesheet) is like this:</p>
+<pre><code>.f\:10 { font-size: var(--z-10); }
+</code></pre>
 
 </div>
 
