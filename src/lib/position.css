@@ -5,22 +5,12 @@
 @each $mq in var(--mqs) {
 	@if $(mq) == n {
 		@each $position, $pos in var(--pos-options) {
-			/*---
-				title: $(position)
-				section: position
-				---
-
-				```html
-				<span class=".pos:$(pos)">pos:$(pos)</span>
-				```
-			*/
 			@if $(position) == cover {
 				.pos\:$(pos) {
 					top: 0;
 					bottom: 0;
 					left: 0;
 					right: 0;
-					margin: auto;
 				}
 			} @else {
 				.pos\:$(pos) {
@@ -31,17 +21,17 @@
 	} @else {
 		@media (--mq-$(mq)) {
 			@each $position, $pos in var(--pos-options) {
-				/*---
-					title: $(position)
-					section: position
-					---
-
-					```html
-					<span class=".pos:$(pos)\@$(mq)">pos:$(post)@$(mq)</span>
-					```
-				*/
-				.pos\:$(pos)\@$(mq) {
-					position: $(position);
+				@if $(position) == cover {
+					.pos\:$(pos)\@$(mq) {
+						top: 0;
+						bottom: 0;
+						left: 0;
+						right: 0;
+					}
+				} @else {
+					.pos\:$(pos)@$(mq) {
+						position: $(position);
+					}
 				}
 			}
 		}
