@@ -9,7 +9,6 @@
 @import "src/lib/display.css";
 @import "src/lib/float.css";
 @import "src/lib/vertical-align.css";
-@import "src/lib/sides.css";
 @import "src/lib/flex.css";
 @import "src/lib/size.css";
 @import "src/lib/line-height.css";
@@ -18,6 +17,7 @@
 @import "src/lib/overflow.css";
 @import "src/lib/radius.css";
 @import "src/lib/position.css";
+@import "src/lib/sides.css";
 @import "src/lib/max-width.css";
 @import "src/lib/text-transform.css";
 
