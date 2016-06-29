@@ -29,7 +29,7 @@
 						right: 0;
 					}
 				} @else {
-					.pos\:$(pos)@$(mq) {
+					.pos\:$(pos)\@$(mq) {
 						position: $(position);
 					}
 				}
