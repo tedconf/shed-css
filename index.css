@@ -23,7 +23,7 @@
 
 :root {
 	--ms-ratio: var(--minor-third);
-	--mqs: n, xs, sm ,md, lg, xl;
+	--mqs: n, xs, sm ,md, lg, xl, xxl;
 	--ms: -dot1, -dot2, -dot3, -dot4, -dot5, -dot6, -dot7, -dot8, -dot9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 	--z: \.1, \.2, \.3, \.4, \.5, \.6, \.7, \.8, \.9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 	--f-f-styles: (sans, serif, mono), (f-f-sans, f-f-serif, f-f-mono);
@@ -75,3 +75,4 @@
 @custom-media --mq-md (min-width: 37em);
 @custom-media --mq-lg (min-width: 50em);
 @custom-media --mq-xl (min-width: 75em);
+@custom-media --mq-xxl (min-width: 100em);
