@@ -68,3 +68,10 @@ this release accidentally commented imports out.
 
 # 1.0.0-rc.1 - 06/03/2016
 - Add documentation 😹 
+
+# 1.0.0-rc.7 - 07/04/2016
+- Add pseudoclasses to text-decoration
+	```
+		.hover/t-d:u
+	```
+- Add documentation 😹 
