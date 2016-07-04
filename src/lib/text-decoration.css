@@ -1,37 +1,41 @@
 :root {
+	--pseudo-states: n, active, focus, hover, visited;
 	--t-d: (n, u, l-t), (none, underline, line-through);
 }
 @each $mq in var(--mqs) {
-	@each $short, $val in var(--t-d) {
-		@if $(mq) == n {
-			/*---
-				title: $(short)
-				section: Text Decoration
-				---
-
-				```html
-				<div class=".t-d:$(short)">t-d:$(short)</span>
-				```
-			*/
-			.t-d\:$(short) {
-				text-decoration: $(val);
+	@each $state in var(--pseudo-states) {
+		@if $(state) == n {
+			@each $short, $val in var(--t-d) {
+				@if $(mq) == n {
+					.t-d\:$(short) {
+						text-decoration: $(val);
+					}
+				} @else {
+					@media(--mq-$(mq)) {
+						.t-d\:$(short)\@$(mq) {
+							text-decoration: $(val);
+						}
+					}
+				}
 			}
 		} @else {
-			@media(--mq-$(mq)) {
-				/*---
-					title: $(short)
-					section: Text Decoration
-					---
-
-					```html
-					<div class=".t-d:$(short)@$(mq)">t-d:$(short)@$(mq)</span>
-					```
-				*/
-				.t-d\:$(short)\@$(mq) {
-					text-decoration: $(val);
+			@each $short, $val in var(--t-d) {
+				@if $(mq) == n {
+					.$(state)\/t-d\:$(short) {
+						@nest &:$(state) {
+							text-decoration: $(val);
+						}
+					}
+				} @else {
+					@media(--mq-$(mq)) {
+						.$(state)\/t-d\:$(short)\@$(mq) {
+							@nest &:$(state) {
+								text-decoration: $(val);
+							}
+						}
+					}
 				}
 			}
 		}
 	}
 }
-
