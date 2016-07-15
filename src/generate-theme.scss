@@ -1,0 +1,74 @@
+$shed-pseudo-states: n, active, focus, hover, visited;
+@mixin generate-theme($theme_breaks, $theme_colors) {
+	@each $break, $mq in $theme_breaks {
+		@each $label, $color in $theme_colors {
+			@if $break == n {
+				@each $state in $shed-pseudo-states {
+					@if $state == n {
+						.bg\:#{$label} {
+							background: $color;
+						}
+
+						.c\:#{$label} {
+							color: $color;
+						}
+
+						@for $i from 1 through 9 {
+							.bg\:#{$label}\.#{$i} {
+								background: transparentize($color, ($i / 10));
+							}
+
+							.c\:#{$label}\.#{$i} {
+								color: transparentize($color, ($i / 10));
+							}
+						}
+					} @else {
+						.#{$state}\/bg\:#{$label}:#{$state} {
+							background: $color;
+						}
+
+						@for $i from 1 through 9 {
+							.#{$state}\/bg\:#{$label}\.#{$i}:#{$state} {
+								background: transparentize($color, ($i / 10));
+							}
+						}
+					}
+				}
+			} @else {
+				@media($mq) {
+					@each $state in $shed-pseudo-states {
+						@if $state == n {
+							.bg\:#{$label}\@#{$break} {
+								background: $color;
+							}
+
+							.c\:#{$label}\@#{$break} {
+								color: $color;
+							}
+
+							@for $i from 1 through 9 {
+								.bg\:#{$label}\.#{$i}\@#{$break} {
+									background: transparentize($color, ($i / 10));
+								}
+
+								.c\:#{$label}\.#{$i}\@#{$break} {
+									color: transparentize($color, ($i / 10));
+								}
+							}
+						} @else {
+							.#{$state}\/bg\:#{$label}\@#{$break}:#{$state} {
+								background: $color;
+							}
+
+							@for $i from 1 through 9 {
+								.#{$state}\/bg\:#{$label}\.#{$i}\@#{$break}:#{$state} {
+									background: transparentize($color, ($i / 10));
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
