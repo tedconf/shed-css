@@ -1,86 +1,9 @@
-<p class="m-b:3">To generate a set of colors in the shed style, you can use these conveniences, which may be added to core:</p>
+<p class="m-b:3">To generate a set of colors in the shed style, you can use this Sass mixin, which can be found in the core.</p>
 
 ### SCSS
 ```scss
-@mixin generate-theme($theme_breaks, $theme_colors) {
-	@each $break, $mq in $theme_breaks {
-		@each $label, $color in $theme_colors {
-			@if $break == n {
-				.bg\:#{$label} {
-					background-color: $color;
-				}
+@import "shed-css/lib/generate-theme.scss";
 
-				.c\:#{$label} {
-					color: $color;
-				}
-
-				.hover\/bg\:#{$label}:hover {
-					background-color: $color;
-				}
-
-				.hover\/c\:#{$label}:hover {
-					color: $color;
-				}
-
-				@for $i from 1 through 9 {
-					.bg\:#{$label}\.#{$i} {
-						background-color: transparentize($color, ($i / 10));
-					}
-
-					.c\:#{$label}\.#{$i} {
-						color: transparentize($color, ($i / 10));
-					}
-
-					.hover\/bg\:#{$label}\.#{$i}:hover {
-						background-color: transparentize($color, ($i / 10));
-					}
-
-					.hover\/c\:#{$label}\.#{$i}:hover {
-						color: transparentize($color, ($i / 10));
-					}
-				}
-			} @else {
-				@media($mq) {
-					.bg\:#{$label}\@#{$break} {
-						background-color: $color;
-					}
-
-					.c\:#{$label}\@#{$break} {
-						color: $color;
-					}
-
-					.hover\/bg\:#{$label}\@#{$break}:hover {
-						background-color: $color;
-					}
-
-					.hover\/c\:#{$label}\@#{$break}:hover {
-						color: $color;
-					}
-
-					@for $i from 1 through 9 {
-						.bg\:#{$label}\.#{$i}\@#{$break} {
-							background-color: transparentize($color, ($i / 10));
-						}
-
-						.c\:#{$label}\.#{$i}\@#{$break} {
-							color: transparentize($color, ($i / 10));
-						}
-
-						.hover\/bg\:#{$label}\.#{$i}\@#{$break}:hover {
-							background-color: transparentize($color, ($i / 10));
-						}
-
-						.hover\/c\:#{$label}\.#{$i}\@#{$break}:hover {
-							color: transparentize($color, ($i / 10));
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-$ninja-black: rgba(0, 0, 0, 0);
 $natural-black: #111111;
 $darker-gray: #333333;
 $dark-gray: #666666;
@@ -88,7 +11,6 @@ $gray: #999999;
 $light-gray: #CCCCCC;
 $lighter-gray: #F3F3F3;
 $white: #FFFFFF;
-$error-red: #BF0C00;
 $ted-red: #E62B1E;
 
 
@@ -120,6 +42,8 @@ $my_breakpoints: (
 ```
 
 ### POSTCSS
+While there's no convenice for creating themes, you can use this code along with the necessary postcss plugins to generate your own theme:
+
 ```css
 :root {
 	--black: #111111;
