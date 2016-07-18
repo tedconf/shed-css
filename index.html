@@ -320,7 +320,10 @@
 	<pre class="language-scss m-b:7"><code class="language-scss">@import "shed-css/dist/index.css";</code></pre>
 
 	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="c:blue f-w:700 v-a:m f:4 t-t:u">🖌 Fixie</div> — I want to customize the scale and fonts.</h4>
-	<p class="m-b:3">As of now, shed is written in <a class="link" href="http://postcss.org/">PostCSS</a> using future css syntax. To customize the scale and fonts, you should install shed's peer dependencies (<a href="http://postcss.org">postcss</a> and <a href="http://cssnext.io/postcss" class="link">cssnext</a>) and add them to your build pipeline.</p>
+	<p class="m-b:3">Shed is written in <a class="link" href="http://postcss.org/">PostCSS</a> using future css syntax, but is distributed as future css and Sass. To customize the scale and fonts, you must follow one of these two paths:</p>
+
+	<h5>PostCSS</h5>
+	<p class="m-b:3">install shed's peer dependencies (<a href="http://postcss.org">postcss</a> and <a href="http://cssnext.io/postcss" class="link">cssnext</a>) and add them to your build pipeline.</p>
 	<h5 class="f:1 t-t:u">Install peer deps:</h5>
 	<pre class="language-bash m-b:5"><code class="language-bash">npm ls 2>/dev/null | grep \"UNMET PEER DEPENDENCY\" | awk '{print $NF}' | xargs npm install -D</code></pre>
 
@@ -382,7 +385,70 @@
 	--l-s--loose: .1em;
 }</code></pre>
 	<p class="m-b:1">
-		Now, you might want to get your brand colors in there by <a class="link" href="/docs.html#custom-theme">creating a custom theme.</a>
+		Now, you might want to get your brand colors in there by <a class="link" href="docs.html#custom-theme">creating a custom theme.</a>
+	</p>
+
+	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="f:4 c:blue f-w:700 v-a:m t-t:u">🚲🏚 Trailblazer</div> — I demand complete control (pro-level bikeshedder)</h4>
+	<a
+		href="docs.html#custom-theme"
+		class="link d:i-b m-b:7"
+	>See the full customization guide</a>
+
+	<h5>Sass</h5>
+	<h5 class="f:1 t-t:u">Customize Variables:</h5>
+	<pre class="language-css m-b:7"><code class="language-css">@import "shed-css/lib/index.scss";
+
+$ms-base: 1rem !default;
+$ms-ratio: $minor-third !default;
+
+$f-f-sans: sans-serif !default;
+$f-f-serif: serif !default;
+$f-f-mono: monospace !default;
+
+$f-w-min: 100 !default;
+$f-w-max: 900 !default;
+
+$l-h--default: 1 !default;
+$l-h--tight: $z2 !default;
+$l-h--normal: $z1 !default;
+$l-h--loose: $z4 !default;
+
+$l-s--default: normal !default;
+$l-s--tight: -.08em !default;
+$l-s--normal: .16em !default;
+$l-s--loose: .32em !default;
+
+$z-dot9: $ms-1 !default;
+$z-dot8: $ms-2 !default;
+$z-dot7: $ms-3 !default;
+$z-dot6: $ms-4 !default;
+$z-dot5: $ms-5 !default;
+$z-dot4: $ms-6 !default;
+$z-dot3: $ms-7 !default;
+$z-dot2: $ms-8 !default;
+$z-dot1: $ms-9 !default;
+$z0: 0 !default;
+$z1: $ms0 !default;
+$z2: $ms1 !default;
+$z3: $ms2 !default;
+$z4: $ms3 !default;
+$z5: $ms4 !default;
+$z6: $ms5 !default;
+$z7: $ms6 !default;
+$z8: $ms7 !default;
+$z9: $ms8 !default;
+$z10: $ms9 !default;
+
+// Custom Media Query Variables
+$mq-xs: '(min-width: 20em)' !default;
+$mq-sm: '(min-width: 30em)' !default;
+$mq-md: '(min-width: 37em)' !default;
+$mq-lg: '(min-width: 50em)' !default;
+$mq-xl: '(min-width: 75em)' !default;
+$mq-xxl: '(min-width: 100em)' !default;
+}</code></pre>
+	<p class="m-b:1">
+		Now, you might want to get your brand colors in there by <a class="link" href="docs.html#custom-theme">creating a custom theme.</a>
 	</p>
 
 	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="f:4 c:blue f-w:700 v-a:m t-t:u">🚲🏚 Trailblazer</div> — I demand complete control (pro-level bikeshedder)</h4>
