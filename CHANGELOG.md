@@ -75,3 +75,8 @@ this release accidentally commented imports out.
 		.hover/t-d:u
 	```
 - Add documentation 😹 
+
+# 1.0.0-rc.9 – 10/12/2016
+- Add flex-grow
+- Add flex-shrink
+- Add flex-basis
