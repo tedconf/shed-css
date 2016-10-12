@@ -278,3 +278,33 @@
 		}
 	}
 }
+
+@each $mq in var(--mqs) {
+	@for $i from 0 to 10 {
+		@if $(mq) == n {
+			.flx-s\:$i {
+				flex-shrink: $i;
+			}
+		} @else {
+			@media(--mq-$(mq)) {
+				.flx-s\:$i\@$(mq) {
+					flex-shrink: $i;
+				}
+			}
+		}
+	}
+}
+
+@each $mq in var(--mqs) {
+	@if $(mq) == n {
+		.flx-b\:a {
+			flex-basis: auto;
+		}
+	} @else {
+		@media(--mq-$(mq)) {
+			.flx-b\:a\@$(mq) {
+				flex-basis: auto;
+			}
+		}
+	}
+}
