@@ -29,22 +29,8 @@
 				}
 				@each $ms, $z in (var(--ms)), (var(--z)) {
 					@if $(dir) == all {
-						/*---
-							title: $(prop)
-							section: Spacing
-							---
-
-							```html
-							<div class=".$(short):$(z)">$(short):$(z)</span>
-							```
-						*/
 						.$(short)\:$(z) {
 							$(prop): var(--z$(ms));
-						}
-						@if $(prop) == margin {
-							.$(short)\:-$(z) {
-								$(prop): -var(--z$(ms));
-							}
 						}
 					} @else {
 						/*---
@@ -61,10 +47,22 @@
 								$(prop)-left: var(--z$(ms));
 								$(prop)-right: var(--z$(ms));
 							}
+							@if $(prop) == margin {
+								.$(short)-$(dir-short)\:-$(z) {
+									$(prop)-left: -var(--z$(ms));
+									$(prop)-right: -var(--z$(ms));
+								}
+							}
 						} @else if $(dir) == y {
 							.$(short)-$(dir-short)\:$(z) {
 								$(prop)-top: var(--z$(ms));
 								$(prop)-bottom: var(--z$(ms));
+							}
+							@if $(prop) == margin {
+								.$(short)-$(dir-short)\:-$(z) {
+									$(prop)-top: -var(--z$(ms));
+									$(prop)-bottom: -var(--z$(ms));
+								}
 							}
 						} @else {
 							.$(short)-$(dir-short)\:$(z) {
