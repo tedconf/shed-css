@@ -1,0 +1,39 @@
+:root {
+	--cur-options: (default, auto, none, pointer, text, help, move, not-allowed, grab, grabbing, zoom-in, zoom-out), (d, a, n, p, t, h, m, n-a, g, gg, z-i, z-o);
+}
+
+@each $mq in var(--mqs) {
+	@if $(mq) == n {
+		@each $style, $var in var(--cur-options) {
+			/*---
+				title: $(style)
+				section: cursor
+				---
+
+				```html
+				<span class=".cur:$(var)">cur:$(var)</span>
+				```
+			*/
+			.cur\:$(var) {
+				cursor: $(style);
+			}
+		}
+	} @else {
+		@media (--mq-$(mq)) {
+			@each $style, $var in var(--cur-options) {
+				/*---
+					title: $(style)
+					section: cursor
+					---
+
+					```html
+					<span class=".cur:$(var)\@$(mq)">cur:$(var)@$(mq)</span>
+					```
+				*/
+				.cur\:$(var)\@$(mq) {
+					cursor: $(style);
+				}
+			}
+		}
+	}
+}
