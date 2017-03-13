@@ -69,7 +69,7 @@ That's great, but I wouldn't want to combine a load of classes every time
 I need a button. shed suggests solving this problem by moving all of your
 design language to the template layer. The reasons are multiple:
 
-- When you create a new UI component, you're creating an abstraction, and abstractions are hard. You represent an idea through design and interaction. When you couple this with many common approaches to CSS architecture, you can exacerbate the problem by no only reusing that abstraction in CSS, but by coupling it with additional abstractions (commonly called patterns or objects) like the media object, breadcrumbs, block-list, etc. Now you have multiple requirements on the markup that are associated with multiple abstractions. Having so many moving and dependant abstractions becomes confusing and overwhelming.
+- When you create a new UI component, you're creating an abstraction, and abstractions are hard. You represent an idea through design and interaction. When you couple this with many common approaches to CSS architecture, you can exacerbate the problem by not only reusing that abstraction in CSS, but by coupling it with additional abstractions (commonly called patterns or objects) like the media object, breadcrumbs, block-list, etc. Now you have multiple requirements on the markup that are associated with multiple abstractions. Having so many moving and dependant abstractions becomes confusing and overwhelming.
 
 - Because a special abstraction is created for every UI component, modifying
 	them often involves extending that abstraction again. Now you have your
