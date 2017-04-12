@@ -80,3 +80,6 @@ this release accidentally commented imports out.
 - Add flex-grow
 - Add flex-shrink
 - Add flex-basis
+
+# 1.2.0 - 4/12/17
+- Add cursor
