@@ -83,3 +83,6 @@ this release accidentally commented imports out.
 
 # 1.2.0 - 4/12/17
 - Add cursor
+
+# 1.2.1 - 4/12/17
+- remove peerdeps
