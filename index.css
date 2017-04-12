@@ -20,6 +20,7 @@
 @import "src/lib/sides.css";
 @import "src/lib/max-width.css";
 @import "src/lib/text-transform.css";
+@import "src/lib/cursor.css";
 
 :root {
 	--ms-ratio: var(--minor-third);
