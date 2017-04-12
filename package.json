@@ -79,9 +79,5 @@
     "script-loader": "^0.6.1",
     "shed-css": "0.7.3",
     "webpack": "^1.12.1"
-  },
-  "peerDependencies": {
-    "postcss": "5.0.21",
-    "postcss-cssnext": "2.5.2"
   }
 }
