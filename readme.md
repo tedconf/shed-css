@@ -1,111 +1,185 @@
-<div class="">
-	<h1
-		class="
-			f-w:700
-			t-t:u
-			l-h:d
-			f:7
-			l-s:l
-			c:blue
-			m-b:5
-		"
-	>The Beginning of the End of CSS</h1>
+# shed.css – The Beginning of the End of CSS
 
-	<p class="m-b:1">Shed.css came about after I got tired of writing CSS. All of the CSS in the world has already been written, and there's no need to rewrite it in every one of our projects. After a bikeshedding session with  <a class="link" href="https://mobile.twitter.com/brnnbrn">@brnnbrn</a> & <a class="link" href="https://mobile.twitter.com/samselikoff">@samselikoff</a>, and <a class="link" href="http://mobile.twitter.com/vinspee">me</a>, we came up with a naming scheme we were satisfied with, and <a class="link" href="http://github.com/tedconf/shed-css">shed.css</a> was born.</p>
+Shed.css came about after I got tired of writing CSS. All of the CSS in the world has already been written, and there's no need to rewrite it in every one of our projects. After a bikeshedding session with [@brnnbrn](https://mobile.twitter.com/brnnbrn) & [@samselikoff](https://mobile.twitter.com/samselikoff), and [me](http://mobile.twitter.com/vinspee), we came up with a naming scheme we were satisfied with, and [shed.css](http://github.com/tedconf/shed-css) was born.
 
-	<ul>
-		<li><a href="//tedconf.github.io/shed-css/docs.html#essential-concepts" class="d:b m-b:5 link">What does shed accomplish?</a></li>
-		<li><a href="//tedconf.github.io/shed-css/docs.html#examples" class="d:b m-b:5 link">What does it look like?</a></li>
-	</ul>
+[What does shed accomplish?](http://tedconf.github.io/shed-css/docs.html#essential-concepts)
 
-	<h2
-		class="
-			f:5
-			t-t:u
-			m-b:1
-		"
-	>Use</h2>
+[What does it look like?](http://tedconf.github.io/shed-css/docs.html#examples)
 
-	<h4><em>In a hurry? Clone <a class="link" href="https://github.com/VinSpee/shed-starter">this repo</a> to get going with a starter kit and skip all of the setup.</em></h4>
+## Use
 
-	<h3>First, install shed using <a href="http://www.nearform.com/nodecrunch/nodejs-sudo-free/" class="link">npm</a>.</h3>
-	<pre class="language-bash"><code class="language-bash">❯ npm install --saveDev shed-css</code></pre>
+#### _In a hurry? Clone [this repo](https://github.com/VinSpee/shed-starter) to get going with a starter kit and skip all of the setup._
 
-	<p class="m-b:7">At this point, we come to a fork in the road. Choose one of these options:</p>
+### First, install shed using [npm](http://www.nearform.com/nodecrunch/nodejs-sudo-free/).
 
-	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="c:blue f-w:700 v-a:m f:4 t-t:u">🚳 Single Speed</div>— I just want to use it.</h4>
-	<pre class="language-scss m-b:7"><code class="language-scss">@import "shed-css/dist/index.css";</code></pre>
+    ❯ yarn add -D shed-css
 
-	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="c:blue f-w:700 v-a:m f:4 t-t:u">🖌 Fixie</div> — I want to customize the scale and fonts.</h4>
-	<p class="m-b:3">As of now, shed is written in <a class="link" href="http://postcss.org/">PostCSS</a> using future css syntax. To customize the scale and fonts, you should install shed's peer dependencies (<a href="http://postcss.org">postcss</a> and <a href="http://cssnext.io/postcss" class="link">cssnext</a>) and add them to your build pipeline.</p>
-	<h5 class="f:1 t-t:u">Install peer deps:</h5>
-	<pre class="language-bash m-b:5"><code class="language-bash">npm ls 2>/dev/null | grep \"UNMET PEER DEPENDENCY\" | awk '{print $NF}' | xargs npm install -D</code></pre>
+At this point, we come to a fork in the road. Choose one of these options:
 
-	<h5 class="f:1 t-t:u">Customize Variables:</h5>
-	<pre class="language-css m-b:7"><code class="language-css">@import "shed-css/lib/index.css";
+#### 🚳 Single Speed
 
-:root {
-	/*
-	 * These "z" values reflect the steps on the scale.
-	 * Numbers prefixed with "dot" mean they're below
-	 * the base font size.
-	 */
-	--z-dot1: .19381rem
-	--z-dot2: .23257rem
-	--z-dot3: .27908rem
-	--z-dot4: .3349rem
-	--z-dot5: .40188rem
-	--z-dot6: .48225rem
-	--z-dot7: .5787rem
-	--z-dot8: .69444rem
-	--z-dot9: .83333rem
-	--z0: 0;
-	--z1: 1rem
-	--z2: 1.2rem
-	--z3: 1.44rem
-	--z4: 1.728rem
-	--z5: 2.0736rem
-	--z6: 2.48832rem
-	--z7: 2.98598rem
-	--z8: 3.58318rem
-	--z9: 4.29982rem
-	--z10: 5.15978rem
+— I just want to use it.
 
-	/*
-	 * These "f-f" values change the font family utilties
-	 * in the "font family" section.
-	 */
-	--f-f-sans: sans-serif;
-	--f-f-serif: serif;
-	--f-f-mono: monospace;
+    @import "shed-css/dist/index.css";
 
-	/*
-	 * These "l-h" values change the line height utilties
-	 * in the "line height" section. Unitless numbers recommended.
-	 */
-	--l-h--default: 1;
-	--l-h--tight: 1.2;
-	--l-h--normal: 1.5;
-	--l-h--loose: 1.75;
+#### ⚛️ React
 
-	/*
-	 * These "l-s" values change the letter spacing
-	 * utilties in the "letter spacing" section.
-	 * Em values recommended.
-	 */
-	--l-s--default: normal;
-	--l-s--tight: -.04em;
-	--l-s--normal: -.01em;
-	--l-s--loose: .1em;
-}</code></pre>
-	<p class="m-b:1">
-		Now, you might want to get your brand colors in there by <a class="link" href="//tedconf.github.io/shed-css/docs.html#custom-theme">creating a custom theme.</a>
-	</p>
+— I want to use it in React.js
 
-	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="f:4 c:blue f-w:700 v-a:m t-t:u">🚲🏚 Trailblazer</div> — I demand complete control (pro-level bikeshedder)</h4>
-	<a
-		href="//tedconf.github.io/shed-css/docs.html#custom-theme"
-		class="link d:i-b m-b:7"
-	>See the full customization guide</a>
+Shed has a [react companion](https://github.com/VinSpee/react-shed) implemented using [styled components](https://styled-components.com/). It comes with an optional [babel plugin](https://github.com/VinSpee/babel-plugin-shed) which allows you to write components like this:
 
-</div>
+    <h1.shed
+    	f="4"
+    	px="2"
+    	c="white"
+    	bg="blue"
+    >
+    	Padded Headline
+    </h1.shed>
+
+#### 🖌 Fixie
+
+— I want to customize the scale and fonts.
+
+Shed is written in [PostCSS](http://postcss.org/) using future css syntax, but is distributed as future css and Sass. To customize the scale and fonts, you must follow one of these two paths:
+
+##### PostCSS
+
+install shed's peer dependencies ([postcss](http://postcss.org) and [cssnext](http://cssnext.io/postcss)) and add them to your build pipeline.
+
+##### Install peer deps:
+
+    npm ls 2>/dev/null | grep \"UNMET PEER DEPENDENCY\" | awk '{print $NF}' | xargs yarn add -D
+
+##### Customize Variables:
+
+    @import "shed-css/lib/index.css";
+
+    :root {
+    	/*
+    	 * These "z" values reflect the steps on the scale.
+    	 * Numbers prefixed with "dot" mean they're below
+    	 * the base font size.
+    	 */
+    	--z-dot1: .19381rem
+    	--z-dot2: .23257rem
+    	--z-dot3: .27908rem
+    	--z-dot4: .3349rem
+    	--z-dot5: .40188rem
+    	--z-dot6: .48225rem
+    	--z-dot7: .5787rem
+    	--z-dot8: .69444rem
+    	--z-dot9: .83333rem
+    	--z0: 0;
+    	--z1: 1rem
+    	--z2: 1.2rem
+    	--z3: 1.44rem
+    	--z4: 1.728rem
+    	--z5: 2.0736rem
+    	--z6: 2.48832rem
+    	--z7: 2.98598rem
+    	--z8: 3.58318rem
+    	--z9: 4.29982rem
+    	--z10: 5.15978rem
+
+    	/*
+    	 * These "f-f" values change the font family utilties
+    	 * in the "font family" section.
+    	 */
+    	--f-f-sans: sans-serif;
+    	--f-f-serif: serif;
+    	--f-f-mono: monospace;
+
+    	/*
+    	 * These "l-h" values change the line height utilties
+    	 * in the "line height" section. Unitless numbers recommended.
+    	 */
+    	--l-h--default: 1;
+    	--l-h--tight: 1.2;
+    	--l-h--normal: 1.5;
+    	--l-h--loose: 1.75;
+
+    	/*
+    	 * These "l-s" values change the letter spacing
+    	 * utilties in the "letter spacing" section.
+    	 * Em values recommended.
+    	 */
+    	--l-s--default: normal;
+    	--l-s--tight: -.04em;
+    	--l-s--normal: -.01em;
+    	--l-s--loose: .1em;
+    }
+
+Now, you might want to get your brand colors in there by [creating a custom theme.]({{#if baseurl}}{{ baseurl }}/{{/if}}docs.html#custom-theme)
+
+#### 
+
+<div class="f:4 c:blue f-w:700 v-a:m t-t:u">🚲🏚 Trailblazer</div>
+
+— I demand complete control (pro-level bikeshedder)
+
+[See the full customization guide](http://tedconf.github.io/shed-css/customization.html)
+
+##### Sass
+
+##### Customize Variables:
+
+    @import "shed-css/lib/index.scss";
+
+    $ms-base: 1rem !default;
+    $ms-ratio: $minor-third !default;
+
+    $f-f-sans: sans-serif !default;
+    $f-f-serif: serif !default;
+    $f-f-mono: monospace !default;
+
+    $f-w-min: 100 !default;
+    $f-w-max: 900 !default;
+
+    $l-h--default: 1 !default;
+    $l-h--tight: $z2 !default;
+    $l-h--normal: $z1 !default;
+    $l-h--loose: $z4 !default;
+
+    $l-s--default: normal !default;
+    $l-s--tight: -.08em !default;
+    $l-s--normal: .16em !default;
+    $l-s--loose: .32em !default;
+
+    $z-dot9: $ms-1 !default;
+    $z-dot8: $ms-2 !default;
+    $z-dot7: $ms-3 !default;
+    $z-dot6: $ms-4 !default;
+    $z-dot5: $ms-5 !default;
+    $z-dot4: $ms-6 !default;
+    $z-dot3: $ms-7 !default;
+    $z-dot2: $ms-8 !default;
+    $z-dot1: $ms-9 !default;
+    $z0: 0 !default;
+    $z1: $ms0 !default;
+    $z2: $ms1 !default;
+    $z3: $ms2 !default;
+    $z4: $ms3 !default;
+    $z5: $ms4 !default;
+    $z6: $ms5 !default;
+    $z7: $ms6 !default;
+    $z8: $ms7 !default;
+    $z9: $ms8 !default;
+    $z10: $ms9 !default;
+
+    // Custom Media Query Variables
+    $mq-xs: '(min-width: 20em)' !default;
+    $mq-sm: '(min-width: 30em)' !default;
+    $mq-md: '(min-width: 37em)' !default;
+    $mq-lg: '(min-width: 50em)' !default;
+    $mq-xl: '(min-width: 75em)' !default;
+    $mq-xxl: '(min-width: 100em)' !default;
+    }
+
+Now, you might want to get your brand colors in there by [creating a custom theme.](http://tedconf.github.io/shed-css/docs.html#custom-theme)
+
+#### 🚲🏚 Trailblazer
+
+— I demand complete control (pro-level bikeshedder)
+
+[See the full customization guide](http://tedconf.github.io/shed-css/customization.html)</div>
