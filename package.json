@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "install-peers": "npm ls 2>/dev/null | grep \"UNMET PEER DEPENDENCY\" | awk '{print $NF}' | xargs npm install -D",
+    "postinstall": "mkdir -p lib && touch lib/generate-theme.scss && touch lib/index.css",
     "start": "npm run dev",
     "dev": "npm-run-all build:css:dist --parallel watch:css serve",
     "compile:css:loops": "postcss -u postcss-import -u postcss-at-rules-variables -u postcss-for -u postcss-each -u postcss-conditionals index.css",
