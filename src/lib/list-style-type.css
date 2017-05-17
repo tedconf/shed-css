@@ -1,0 +1,39 @@
+:root {
+  --list-style-type-options: (none, disc, circle, square, decimal, lower-roman, lower-latin), (n,d,c,s,dec,l-r,l-l); 
+}
+
+@each $mq in var(--mqs) {
+  @if $(mq) == n {
+    @each $style, $var in var(--list-style-type-options) {
+      /*---
+        title: $(style)
+        section: List Style Type
+        ---
+
+        ```html
+        <span class=".l-s-t:$(var)">l-s-t:$(var)</span>
+        ```
+      */
+      .l-s-t\:$(var) {
+        list-style-type: $(style);
+      }
+    }
+  } @else {
+    @media (--mq-$(mq)) {
+      @each $style, $var in var(--list-style-type-options) {
+        /*---
+          title: $(style)
+          section: List Style Type
+          ---
+
+          ```html
+          <span class=".l-s-t:$(var)\@$(mq)">l-s-t:$(var)@$(mq)</span>
+          ```
+        */
+        .l-s-t\:$(var)\@$(mq) {
+          list-style-type: $(style);
+        }
+      }
+    }
+  }
+}
