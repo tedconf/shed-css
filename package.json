@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "install-peers": "npm ls 2>/dev/null | grep \"UNMET PEER DEPENDENCY\" | awk '{print $NF}' | xargs npm install -D",
-    "postinstall": "mkdir -p lib && touch lib/generate-theme.scss && touch lib/index.css",
+    "setup": "mkdir -p lib && touch lib/index.css",
+    "prestart": "run-s setup",
     "start": "npm run dev",
     "dev": "npm-run-all build:css:dist --parallel watch:css serve",
     "compile:css:loops": "postcss -u postcss-import -u postcss-at-rules-variables -u postcss-for -u postcss-each -u postcss-conditionals index.css",
@@ -23,9 +24,10 @@
     "build:css:dist": "run-s 'compile:css -- -d ./dist' compress:css",
     "build:css:lib": "run-p 'compile:css:loops -- -d ./lib/' tosass:css compile:theme",
     "serve": "browser-sync start --server \"./styleguide\" --files \"styleguide\" \"dist/*.css\" --port \"1337\" --no-open",
-    "build": "run-p build:css:lib build:css:dist",
+    "build": "run-p setup build:css:lib build:css:dist",
     "prepublish": "run-s build",
     "test": "echo \"Error: no test specified\" && exit 0",
+    "predev:docs": "run-s build",
     "dev:docs": "gulp --cwd documentation/ --dev",
     "build:docs": "gulp --cwd documentation/",
     "push_pages": "npm run build:docs && gh-pages -d documentation/dist -b gh-pages"
