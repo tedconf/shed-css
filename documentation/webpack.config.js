@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = function(fabricatorConfig) {
-
 	"use strict";
 
 	var config = {
@@ -15,25 +14,34 @@ module.exports = function(fabricatorConfig) {
 			filename: '[name].js'
 		},
 		module: {
-			loaders: [
+			rules: [
 				{
 					test: /\.js$/,
 					exclude: /(node_modules|prism\.js)/,
-					loaders: ['babel'],
-					presets: ['es2015', 'stage-2']
-				}
-			]
+					use: [
+						{
+							loader: 'babel-loader',
+							options: {
+								presets: [
+									['es2015', { "modules": false }],
+									'stage-2',
+								],
+							},
+						},
+					],
+				},
+			],
 		},
 		plugins: [],
-		cache: {}
 	};
 
 	if (!fabricatorConfig.dev) {
 		config.plugins.push(
-			new webpack.optimize.UglifyJsPlugin()
+			new webpack.optimize.UglifyJsPlugin({
+				minimize: true,
+			})
 		);
 	}
 
 	return config;
-
 };
