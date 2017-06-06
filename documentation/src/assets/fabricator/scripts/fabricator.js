@@ -18,7 +18,7 @@ fabricator.options = {
 		code: true
 	},
 	menu: true,
-	mq: '(min-width: 60em)',
+	mq: '(min-width: 70em)',
 };
 
 // open menu by default if large screen
