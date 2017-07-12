@@ -86,3 +86,6 @@ this release accidentally commented imports out.
 
 # 1.2.1 - 4/12/17
 - remove peerdeps
+
+# 1.3.0 - 7/12/17
+- Add list-style-type
