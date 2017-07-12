@@ -1,6 +1,6 @@
 {
   "name": "shed-css",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "Functional and customizable CSS utilities with familiar names",
   "main": "lib/index.css",
   "style": "lib/index.css",
