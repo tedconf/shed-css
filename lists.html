@@ -18,7 +18,7 @@
 		<link rel="icon" type="image/png" sizes="96x96" href="assets/toolkit/images/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="assets/toolkit/images/favicon-16x16.png">
 
-		<title>shed.css | The Beginning of the End of CSS</title>
+		<title></title>
 
 			<link rel="stylesheet" href="assets/fabricator/styles/f.css">
 
@@ -326,194 +326,93 @@
 				</div>
 
 		
-<div class="">
-	<h1
-		class="
-			f-w:700
-			t-t:u
-			l-h:d
-			f:7
-			l-s:l
-			c:blue
-			m-b:5
-		"
-	>The Beginning of the End of CSS</h1>
+<h1 data-f-toggle="labels">List Style Type</h1>
 
-	<p class="m-b:1">Shed.css came about after I got tired of writing CSS. All of the CSS in the world has already been written, and there's no need to rewrite it in every one of our projects. After a bikeshedding session with  <a class="link" href="https://mobile.twitter.com/brnnbrn">@brnnbrn</a> & <a class="link" href="https://mobile.twitter.com/samselikoff">@samselikoff</a>, and <a class="link" href="http://mobile.twitter.com/vinspee">me</a>, we came up with a naming scheme we were satisfied with, and <a class="link" href="http://github.com/tedconf/shed-css">shed.css</a> was born.</p>
+<div class="f-item-group m-b:7 b-b" id="00-list-style-type">
 
-	<a href="docs.html#essential-concepts" class="d:b m-b:5 link">What does shed accomplish?</a>
-
-	<a href="docs.html#examples" class="d:b m-b:5 link">What does it look like?</a>
-
-	<h2
-		class="
-			f:5
-			t-t:u
+	<div class="m-b:5" data-f-toggle="labels">
+		<h2 class="f:5 m-b:.5">List Style Type</h2>
+		<div
+			class="
+			"
+		>
+			<button
+				data-f-toggle-control="notes"
+				title="Toggle Notes"
+				class="
+					cur:p
+					d:i-b
+					m-r:.2
+					c:blue
+					hover/c:blue.8
+				"
+			>
+				<svg class="h:2 m-w:2">
+					<use xlink:href="#f-icon-notes" />
+				</svg>
+			</button>
+			<button
+				class="
+					cur:p
+					d:i-b
+					m-l:.2
+					c:blue
+					hover/c:blue.8
+				"
+				data-f-toggle-control="code"
+				title="Toggle Code"
+			>
+				<svg class="h:2 m-w:2">
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>	<div class="
+			f-item-notes
 			m-b:1
 		"
-	>Use</h2>
+		data-f-toggle="notes"
+	>
+		<p>Utilities for adjusting the list-style-type</p>
 
-	<h4><em>In a hurry? Clone <a class="link" href="https://github.com/VinSpee/shed-starter">this repo</a> to get going with a starter kit and skip all of the setup.</em></h4>
-
-	<h3>First, install shed using <a href="http://www.nearform.com/nodecrunch/nodejs-sudo-free/" class="link">npm</a>.</h3>
-	<pre class="language-bash"><code class="language-bash">❯ npm install --saveDev shed-css</code></pre>
-
-	<p class="m-b:7">At this point, we come to a fork in the road. Choose one of these options:</p>
-
-	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="c:blue f-w:700 v-a:m f:4 t-t:u">🚳 Single Speed</div>— I just want to use it.</h4>
-	<pre class="language-scss m-b:7"><code class="language-scss">@import "shed-css/dist/index.css";</code></pre>
-
-	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="c:blue f-w:700 v-a:m f:4 t-t:u">⚛️ React</div> — I want to use it in React.js</h4>
-	<p class="m-b:3">Shed has a <a class="link" href="https://github.com/VinSpee/react-shed">react companion</a> implemented using <a class="link" href="https://styled-components.com/">styled components</a>. It comes with an optional <a class="link" href="https://github.com/VinSpee/babel-plugin-shed">babel plugin</a> which allows you to write components like this:</p>
-	<pre class="language-css m-b:7"><code class="language-jsx language-js language-html">&#x3C;h1.shed
-&#x9;f=&#x22;4&#x22;
-&#x9;px=&#x22;2&#x22;
-&#x9;c=&#x22;white&#x22;
-&#x9;bg=&#x22;blue&#x22;
-&#x3E;
-	Padded Headline
-&#x3C;/h1.shed&#x3E;</code></pre>
-
-	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="c:blue f-w:700 v-a:m f:4 t-t:u">🖌 Fixie</div> — I want to customize the scale and fonts.</h4>
-	<p class="m-b:3">Shed is written in <a class="link" href="http://postcss.org/">PostCSS</a> using future css syntax, but is distributed as future css and Sass. To customize the scale and fonts, you must follow one of these two paths:</p>
-
-	<h5>PostCSS</h5>
-	<p class="m-b:3">install shed's peer dependencies (<a href="http://postcss.org">postcss</a> and <a href="http://cssnext.io/postcss" class="link">cssnext</a>) and add them to your build pipeline.</p>
-	<h5 class="f:1 t-t:u">Install peer deps:</h5>
-	<pre class="language-bash m-b:5"><code class="language-bash">npm ls 2>/dev/null | grep \"UNMET PEER DEPENDENCY\" | awk '{print $NF}' | xargs npm install -D</code></pre>
-
-	<h5 class="f:1 t-t:u">Customize Variables:</h5>
-	<pre class="language-css m-b:7"><code class="language-css">@import "shed-css/lib/index.css";
-
-:root {
-	/*
-	 * These "z" values reflect the steps on the scale.
-	 * Numbers prefixed with "dot" mean they're below
-	 * the base font size.
-	 */
-	--z-dot1: .19381rem
-	--z-dot2: .23257rem
-	--z-dot3: .27908rem
-	--z-dot4: .3349rem
-	--z-dot5: .40188rem
-	--z-dot6: .48225rem
-	--z-dot7: .5787rem
-	--z-dot8: .69444rem
-	--z-dot9: .83333rem
-	--z0: 0;
-	--z1: 1rem
-	--z2: 1.2rem
-	--z3: 1.44rem
-	--z4: 1.728rem
-	--z5: 2.0736rem
-	--z6: 2.48832rem
-	--z7: 2.98598rem
-	--z8: 3.58318rem
-	--z9: 4.29982rem
-	--z10: 5.15978rem
-
-	/*
-	 * These "f-f" values change the font family utilties
-	 * in the "font family" section.
-	 */
-	--f-f-sans: sans-serif;
-	--f-f-serif: serif;
-	--f-f-mono: monospace;
-
-	/*
-	 * These "l-h" values change the line height utilties
-	 * in the "line height" section. Unitless numbers recommended.
-	 */
-	--l-h--default: 1;
-	--l-h--tight: 1.2;
-	--l-h--normal: 1.5;
-	--l-h--loose: 1.75;
-
-	/*
-	 * These "l-s" values change the letter spacing
-	 * utilties in the "letter spacing" section.
-	 * Em values recommended.
-	 */
-	--l-s--default: normal;
-	--l-s--tight: -.04em;
-	--l-s--normal: -.01em;
-	--l-s--loose: .1em;
-}</code></pre>
-	<p class="m-b:1">
-		Now, you might want to get your brand colors in there by <a class="link" href="docs.html#custom-theme">creating a custom theme.</a>
-	</p>
-
-	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="f:4 c:blue f-w:700 v-a:m t-t:u">🚲🏚 Trailblazer</div> — I demand complete control (pro-level bikeshedder)</h4>
-	<a
-		href="docs.html#custom-theme"
-		class="link d:i-b m-b:7"
-	>See the full customization guide</a>
-
-	<h5>Sass</h5>
-	<h5 class="f:1 t-t:u">Customize Variables:</h5>
-	<pre class="language-css m-b:7"><code class="language-css">@import "shed-css/lib/index.scss";
-
-$ms-base: 1rem !default;
-$ms-ratio: $minor-third !default;
-
-$f-f-sans: sans-serif !default;
-$f-f-serif: serif !default;
-$f-f-mono: monospace !default;
-
-$f-w-min: 100 !default;
-$f-w-max: 900 !default;
-
-$l-h--default: 1 !default;
-$l-h--tight: $z2 !default;
-$l-h--normal: $z1 !default;
-$l-h--loose: $z4 !default;
-
-$l-s--default: normal !default;
-$l-s--tight: -.08em !default;
-$l-s--normal: .16em !default;
-$l-s--loose: .32em !default;
-
-$z-dot9: $ms-1 !default;
-$z-dot8: $ms-2 !default;
-$z-dot7: $ms-3 !default;
-$z-dot6: $ms-4 !default;
-$z-dot5: $ms-5 !default;
-$z-dot4: $ms-6 !default;
-$z-dot3: $ms-7 !default;
-$z-dot2: $ms-8 !default;
-$z-dot1: $ms-9 !default;
-$z0: 0 !default;
-$z1: $ms0 !default;
-$z2: $ms1 !default;
-$z3: $ms2 !default;
-$z4: $ms3 !default;
-$z5: $ms4 !default;
-$z6: $ms5 !default;
-$z7: $ms6 !default;
-$z8: $ms7 !default;
-$z9: $ms8 !default;
-$z10: $ms9 !default;
-
-// Custom Media Query Variables
-$mq-xs: '(min-width: 20em)' !default;
-$mq-sm: '(min-width: 30em)' !default;
-$mq-md: '(min-width: 37em)' !default;
-$mq-lg: '(min-width: 50em)' !default;
-$mq-xl: '(min-width: 75em)' !default;
-$mq-xxl: '(min-width: 100em)' !default;
-}</code></pre>
-	<p class="m-b:1">
-		Now, you might want to get your brand colors in there by <a class="link" href="docs.html#custom-theme">creating a custom theme.</a>
-	</p>
-
-	<h4 class="f:3 c:blue a-i:m m-b:2"><div class="f:4 c:blue f-w:700 v-a:m t-t:u">🚲🏚 Trailblazer</div> — I demand complete control (pro-level bikeshedder)</h4>
-	<a
-		href="docs.html#custom-theme"
-		class="link d:i-b m-b:7"
-	>See the full customization guide</a>
-
+	</div>
+<div
+	class="
+		f-item-preview
+		b
+		p:1
+		bg:blue
+		c:white
+	"
+>
+	<ul class="p-l:6">
+	<li class="l-s-t:n">none</li>
+	<li class="l-s-t:d">disc</li>
+	<li class="l-s-t:c">circle</li>
+	<li class="l-s-t:s">square</li>
+</ul>
+<ol class="p-l:6 m-t:1">
+	<li class="l-s-t:dec">decimal</li>
+	<li class="l-s-t:l-r">lower-roman</li>
+	<li class="l-s-t:l-l">lower-latin</li>
+</ol>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;ul class&#x3D;&quot;p-l:6&quot;&gt;
+	&lt;li class&#x3D;&quot;l-s-t:n&quot;&gt;none&lt;/li&gt;
+	&lt;li class&#x3D;&quot;l-s-t:d&quot;&gt;disc&lt;/li&gt;
+	&lt;li class&#x3D;&quot;l-s-t:c&quot;&gt;circle&lt;/li&gt;
+	&lt;li class&#x3D;&quot;l-s-t:s&quot;&gt;square&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol class&#x3D;&quot;p-l:6 m-t:1&quot;&gt;
+	&lt;li class&#x3D;&quot;l-s-t:dec&quot;&gt;decimal&lt;/li&gt;
+	&lt;li class&#x3D;&quot;l-s-t:l-r&quot;&gt;lower-roman&lt;/li&gt;
+	&lt;li class&#x3D;&quot;l-s-t:l-l&quot;&gt;lower-latin&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
 </div>
 
+
+</div>
 
 			</div>
 
