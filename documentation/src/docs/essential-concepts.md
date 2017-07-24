@@ -13,7 +13,7 @@ options rather than encouraging [bikeshedding](https://en.wikipedia.org/w/index.
 
 When classes serve a single purpose, the cascade becomes a non-issue. If I use
 the class `bg:black`, I can count on it only doing one thing - making the
-backgorund for this element black. Future developers can also count on that.
+background for this element black. Future developers can also count on that.
 
 This is the core idea that makes atomic/functional css work. Classes are
 "immutable" and you can get the same output every time. They're predictable and
