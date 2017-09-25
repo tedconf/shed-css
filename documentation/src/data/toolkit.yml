@@ -36,3 +36,11 @@ grids:
   - 8
   - 10
   - 12
+sizes:
+  - "xxs"
+  - "xs"
+  - "sm"
+  - "md"
+  - "lg"
+  - "xl"
+  - "xxl"
