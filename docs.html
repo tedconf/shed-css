@@ -490,36 +490,36 @@ options rather than encouraging <a href="https://en.wikipedia.org/w/index.php?ti
 and thereby creating abstraction</li>
 <li>establish consistency by providing sizes for properties based on a scale</li>
 </ul>
-<h3>Focus</h3>
+<p><h3 id="focus">focus</h3></p>
 <p>When classes serve a single purpose, the cascade becomes a non-issue. If I use
 the class <code>bg:black</code>, I can count on it only doing one thing - making the
-backgorund for this element black. Future developers can also count on that.</p>
+background for this element black. Future developers can also count on that.</p>
 <p>This is the core idea that makes atomic/functional css work. Classes are
 &quot;immutable&quot; and you can get the same output every time. They're predictable and
 reliable.</p>
-<h3>Composability</h3>
+<p><h3 id="composability">composability</h3></p>
 <p>Because classes have a single purpose and you can count on them, they're easier
 to use together. I can easily put <code>bg:black c:white</code> and be assured that they
 won't conflict. I can also add <code>p:1</code> and know that I'm not going to impact
 color or background color by adding padding.</p>
-<h3>Scale</h3>
-<p>Choosing sizes has been a never-ending battle. 12px? 13.333px? 14.5px? 15px? and so on. Shed solves this problem by using a <a href="http://www.modularscale.com/?1&amp;rem&amp;1.2&amp;web&amp;text">modular scale</a> to resolve these conflicts. Shed provides a root size (1rem, don't hijack the browser default) and 10 steps above and below it. These apply to font size, padding, margin, height, max-width, positioning, border-radius, etc. This removes the need to dwell on sizes and also makes it easy to combine properties in a meaningful ways. For example (<em>decoration added for clarity</em>):</p>
+<p><h3 id="scale">scale</h3></p>
+<p>Choosing sizes has been a never-ending battle. 12px? 13.333px? 14.5px? 15px? and so on. Shed solves this problem by using a <a href="http://www.modularscale.com/?1&amp;rem&amp;1.2&amp;web&amp;text">modular scale</a> to resolve these conflicts. Shed provides a root size (1rem, don't hijack the browser default) and (by default) 10 steps above and below it. These apply to font size, padding, margin, height, max-width, positioning, border-radius, etc. This removes the need to dwell on sizes and also makes it easy to combine properties in a meaningful ways. For example (<em>decoration added for clarity</em>):</p>
 <div class="pos:r h:10 bg:blue.5 m-y:4">
-	<div
-		class="
-			pos:a
-			c:white
-			bg:blue
-			p:.5
-			t-t:u
-			top:-.5
-			left:-.5
-			right:.5
-		"
-	>
-		I should be aligned w/ my parent, but my background outside of it on the
-		top and left, and inside on the right.
-	</div>
+  <div
+    class="
+      pos:a
+      c:white
+      bg:blue
+      p:.5
+      t-t:u
+      top:-.5
+      left:-.5
+      right:.5
+    "
+  >
+    I should be aligned w/ my parent, but my background outside of it on the
+    top and left, and inside on the right.
+  </div>
 </div>
 <pre><code class="language-html">&lt;div class=&quot;pos:r&quot;&gt;
   &lt;div
@@ -534,7 +534,33 @@ color or background color by adding padding.</p>
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h3>DRYness</h3>
+<p><h3 id="media-queries">Media Queries</h3></p>
+<p>Shed.css is build with mobile-first responsive web design in mind. The media
+queries available by default are:</p>
+<ul>
+<li><code>xxs</code></li>
+<li><code>xs</code></li>
+<li><code>sm</code></li>
+<li><code>md</code></li>
+<li><code>lg</code></li>
+<li><code>xl</code></li>
+<li><code>xxl</code></li>
+</ul>
+<p>You can access them like this:</p>
+<pre><code class="language-html">&lt;div
+  class=&quot;
+    f:1
+    f:2@xxs
+    f:3@xs
+    f:2@sm
+    f:6@md
+    f:4@lg
+    f:5@xl
+    f:6@xxl
+  &quot;
+&gt;I change sizes based on screen resolution&lt;/div&gt;
+</code></pre>
+<p><h3 id="dryness">dryness</h3></p>
 <p>That's great, but I wouldn't want to combine a load of classes every time
 I need a button. shed suggests solving this problem by moving all of your
 design language to the template layer. The reasons are multiple:</p>
