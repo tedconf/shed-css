@@ -24,7 +24,7 @@
 				}
 
 				.$(pos)\:-$(z) {
-					$(pos): -var(--z$(ms));
+					$(pos): calc(0px - var(--z$(ms)));
 				}
 			}
 		} @else {
@@ -48,7 +48,7 @@
 					}
 
 					.$(pos)\:-$(z)\@$(mq) {
-						$(pos): -var(--z$(ms));
+						$(pos): calc(0px - var(--z$(ms)));
 					}
 				}
 			}
