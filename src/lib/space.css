@@ -49,8 +49,8 @@
 							}
 							@if $(prop) == margin {
 								.$(short)-$(dir-short)\:-$(z) {
-									$(prop)-left: -var(--z$(ms));
-									$(prop)-right: -var(--z$(ms));
+									$(prop)-left: calc(0px - var(--z$(ms)));
+									$(prop)-right: calc(0px - var(--z$(ms)));
 								}
 							}
 						} @else if $(dir) == y {
@@ -60,8 +60,8 @@
 							}
 							@if $(prop) == margin {
 								.$(short)-$(dir-short)\:-$(z) {
-									$(prop)-top: -var(--z$(ms));
-									$(prop)-bottom: -var(--z$(ms));
+									$(prop)-top: calc(0px - var(--z$(ms)));
+									$(prop)-bottom: calc(0px - var(--z$(ms)));
 								}
 							}
 						} @else {
@@ -70,7 +70,7 @@
 							}
 							@if $(prop) == margin {
 								.$(short)-$(dir-short)\:-$(z) {
-									$(prop)-$(dir): -var(--z$(ms));
+									$(prop)-$(dir): calc(0px - var(--z$(ms)));
 								}
 							}
 						}
@@ -115,7 +115,7 @@
 							}
 							@if $(prop) == margin {
 								.$(short)\:-$(z)\@$(mq) {
-									$(prop): -var(--z$(ms));
+									$(prop): calc(0px - var(--z$(ms)));
 								}
 							}
 						} @else {
@@ -144,7 +144,7 @@
 								}
 								@if $(prop) == margin {
 									.$(short)-$(dir-short)\:-$(z)\@$(mq) {
-										$(prop)-$(dir): -var(--z$(ms));
+										$(prop)-$(dir): calc(0px - var(--z$(ms)));
 									}
 								}
 							}
